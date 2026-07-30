@@ -206,7 +206,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
   return (
     <div className="min-h-screen bg-[#FDFDFC] text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-600">
       {/* --- HEADER --- */}
-      <header className={`sticky top-0 z-50 ${scrolled ? "bg-white/80" : "bg-transprent backdrop-blur-none border-none"} backdrop-blur-md border-b border-slate-100 px-4 lg:px-12 py-4 flex items-center justify-between`}>
+      <header className={`fixed top-0 left-0 w-full z-50 ${scrolled ? "bg-white/80" : "bg-transprent backdrop-blur-none border-none"} backdrop-blur-md border-b border-slate-100 px-4 lg:px-12 py-6 flex items-center justify-between`}>
         <div className="flex items-center gap-2">
           <div className="bg-gradient-to-tr from-indigo-600 to-violet-500 text-white p-2 rounded-xl shadow-md shadow-indigo-100">
             <Heart className="w-5 h-5 fill-current" />
@@ -362,7 +362,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
 
 <div className="bg-[url('/property-sec-bg-img.png')] bg-no-repeat bg-center bg-cover py-6">
       {/* --- CATEGORIES SLIDER --- */}
-      <section className="px-6 lg:px-20 pt-10 max-w-7xl mx-auto">
+      <section className="px-6 lg:px-20 pt-10 max-w-8xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-slate-900">Browse by categories</h2>
           <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 transition">
@@ -396,7 +396,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
       </section>
 
       {/* --- PROPERTY TYPES --- */}
-      <section className="px-6 lg:px-20 py-2 max-w-7xl mx-auto ">
+      <section className="px-6 lg:px-20 py-2 max-w-8xl mx-auto ">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-slate-900">Property Types</h2>
           <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 transition">
@@ -474,7 +474,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
       </section>
 </div>
       {/* --- FEATURED STAYS IN JAIPUR --- */}
-      <section className="px-6 lg:px-20 pt-12 pb-6 max-w-7xl mx-auto">
+      <section className="px-6 lg:px-20 pt-12 pb-6 max-w-8xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-slate-900">Featured stays in Jaipur</h2>
           <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 transition">
@@ -539,7 +539,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
       </section>
 
       {/* --- NEWSLETTER BANNER --- */}
-      <section className="px-6 lg:px-20 py-8 max-w-7xl mx-auto">
+      <section className="px-6 lg:px-20 py-8 max-w-8xl mx-auto">
         <div className=" relative bg-gradient-to-r from-violet-100 via-indigo-100 to-indigo-50 rounded-3xl p-8 lg:p-12 overflow-hidden border border-indigo-100 flex flex-col md:flex-row items-center justify-between gap-6">
          <img src="/happy-stay-jaipur-home-bottom-cta-left.png" alt="hawamahal-blueprient" className="absolute left-0 top-0  w-70 h-40"/>
           <img src="/happy-stay-jaipur-home-bottom-cta-right.png" alt="tree-blueprient"  className="absolute right-4 top-0 w-30 h-40"/>
