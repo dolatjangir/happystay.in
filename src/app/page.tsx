@@ -211,7 +211,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
       <Navbar scrolled={scrolled} />
 
       {/* OR — Logged In */}
-      <Navbar
+      {/* <Navbar
         scrolled={scrolled}
         isLoggedIn={true}
         user={{
@@ -223,7 +223,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
         onSignIn={() => console.log("Sign in")}
         onSignUp={() => console.log("Sign up")}
         onLogout={() => console.log("Logout")}
-      /> 
+      />  */}
 
       {/* --- HERO SECTION --- */}
   <section

@@ -236,11 +236,11 @@ export default function Navbar({
                   <button
                     className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
                       activeMenu === section.key
-                        ? "text-indigo-600 bg-indigo-50"
-                        : "text-slate-600 hover:text-indigo-600 hover:bg-slate-100/80"
+                        ? "text-indigo-600 bg-indigo-50 "
+                        : "text-slate-600 hover:text-indigo-600 bg-stone-100/50 hover:bg-slate-100/80"
                     }`}
                     aria-expanded={activeMenu === section.key}
-                    aria-haspopup="true"
+                    aria-haspopup="true" 
                   >
                     {section.label}
                     <ChevronDown
@@ -255,7 +255,7 @@ export default function Navbar({
               {/* Standalone Wishlist link */}
               <Link
                 href="#"
-                className="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-100/80 transition-all duration-200"
+                className="px-4 py-2.5 bg-stone-100/50 rounded-xl text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-100/80 transition-all duration-200"
               >
                 Wishlist
               </Link>
@@ -265,14 +265,14 @@ export default function Navbar({
             <div className="flex items-center gap-2">
               {/* Wishlist icon (mobile + desktop) */}
               <button
-                className="p-2.5 rounded-full text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
+                className="p-2.5 rounded-full bg-stone-100/50 text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
                 aria-label="Wishlist"
               >
                 <Heart className="w-5 h-5" />
               </button>
 
               <button
-                className="hidden sm:flex p-2.5 rounded-full text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
+                className="hidden sm:flex p-2.5 rounded-full bg-stone-100/50 text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
                 aria-label="Change language"
               >
                 <Globe className="w-5 h-5" />
