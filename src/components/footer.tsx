@@ -94,7 +94,7 @@ export default function HappyStayFooter() {
     <footer className="relative w-full overflow-hidden rounded-t-3xl bg-[#f4f3ff]">
       {/* Background Image */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-top bg-no-repeat "
+        className="absolute inset-0 z-0 bg-cover bg-top bg-no-repeat opacity-70 "
         style={{ backgroundImage: "url('/footer-bg-img.png')" }}
       />
 
@@ -106,12 +106,7 @@ export default function HappyStayFooter() {
             {/* Brand Column */}
             <div className="lg:col-span-3">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#5b4dff]/10">
-                  <Landmark className="h-6 w-6 text-[#5b4dff]" />
-                </div>
-                <span className="text-2xl font-bold text-[#5b4dff]">
-                  HappyStay
-                </span>
+               <img src="/happystay-logo.png" alt="happystay" className="h-18 w-auto" />
               </div>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-600">
                 Discover the best stays, exclusive deals and unforgettable

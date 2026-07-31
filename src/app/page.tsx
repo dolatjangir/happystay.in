@@ -25,6 +25,7 @@ import gsap from "gsap";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
 import HappyStayFooter from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 // --- Types ---
 interface Category {
@@ -206,56 +207,30 @@ const [scrolled, setScrolled] = useState<boolean>(false);
   return (
     <div className="min-h-screen bg-[#FDFDFC] text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-600">
       {/* --- HEADER --- */}
-      <header className={`fixed top-0 left-0 w-full z-50 ${scrolled ? "bg-white/80" : "bg-transprent backdrop-blur-none border-none"} backdrop-blur-md border-b border-slate-100 px-4 lg:px-12 py-6 flex items-center justify-between`}>
-        <div className="flex items-center gap-2">
-          <div className="bg-gradient-to-tr from-indigo-600 to-violet-500 text-white p-2 rounded-xl shadow-md shadow-indigo-100">
-            <Heart className="w-5 h-5 fill-current" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">
-            HappyStay
-          </span>
-        </div>
+       {/* Logged Out */}
+      <Navbar scrolled={scrolled} />
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#" className="text-slate-900 font-semibold hover:text-indigo-600 transition">
-            Stays
-          </a>
-          <a href="#" className="hover:text-indigo-600 transition">
-            Experiences
-          </a>
-          <a href="#" className="hover:text-indigo-600 transition">
-            Wishlist
-          </a>
-          <a href="#" className="hover:text-indigo-600 transition">
-            List your property
-          </a>
-          <a href="#" className="hover:text-indigo-600 transition">
-            Help
-          </a>
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <button className="p-2 hover:bg-slate-100 rounded-full transition text-slate-600">
-            <Heart className="w-5 h-5" />
-          </button>
-          <button className="p-2 hover:bg-slate-100 rounded-full transition text-slate-600">
-            <Globe className="w-5 h-5" />
-          </button>
-          <button className="px-4 py-2 text-sm font-medium text-indigo-600 hover:bg-indigo-50 rounded-xl transition">
-            Sign in
-          </button>
-          <button className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-md shadow-indigo-200 transition">
-            Sign up
-          </button>
-        </div>
-      </header>
+      {/* OR — Logged In */}
+      <Navbar
+        scrolled={scrolled}
+        isLoggedIn={true}
+        user={{
+          name: "Rahul Sharma",
+          email: "rahul@example.com",
+          avatar: "/avatar.jpg",
+          isHost: true,
+        }}
+        onSignIn={() => console.log("Sign in")}
+        onSignUp={() => console.log("Sign up")}
+        onLogout={() => console.log("Logout")}
+      /> 
 
       {/* --- HERO SECTION --- */}
-    <section
+  <section
   ref={heroRef}
-  className="relative min-h-dvh flex items-center justify-start px-4 sm:px-6 lg:px-20 py-24 md:py-16 overflow-hidden"
+  className="relative h-[30vh] w-full overflow-hidden"
 >
-  {/* Background Image Container */}
+  {/* Background Image */}
   <div className="absolute inset-0 z-0">
     <Image
       src="/happy-stay-jaipur-hero-img.png"
@@ -267,103 +242,89 @@ const [scrolled, setScrolled] = useState<boolean>(false);
     <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent lg:w-2/3" />
   </div>
 
-  {/* Hero Content */}
-  <div className="relative z-10 max-w-xl w-full text-center lg:text-left mx-auto lg:mx-0">
-    <h1 className="animate-fade-in text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-      Find your <span className="text-indigo-600">happy</span>
-      <br />
-      stay in Jaipur
-    </h1>
-    <p className="animate-fade-in mt-4 text-slate-600 font-medium text-sm sm:text-base lg:text-lg leading-relaxed">
-      Handpicked stays. Unforgettable experiences.
-      <br className="hidden sm:block" />
-      Make every trip special with <span className="text-indigo-600 font-semibold">HappyStay</span>.
-    </p>
-  </div>
-
-  {/* --- FLOATING SEARCH BAR --- */}
+  {/* Floating Search Bar */}
   <div
     ref={searchBoxRef}
-    className="absolute bottom-10 sm:bottom-24 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-20 bg-white rounded-2xl p-3 shadow-xl border border-slate-100/80"
+    className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-20 bg-white rounded-2xl p-2 shadow-xl border border-slate-100/80"
   >
     <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center">
 
-            {/* Property Type */}
-            <div className="flex items-center gap-3 px-4 py-2 hover:bg-slate-50 rounded-xl cursor-pointer transition border-b md:border-b-0 md:border-r border-slate-100">
-              <div className="text-slate-400">
-                <Home className="w-5 h-5" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
-                  Property Type
-                </p>
-                <div className="flex items-center justify-between text-sm text-slate-500 font-medium">
-                  <span className="truncate">Any type</span>
-                  <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
-                </div>
-              </div>
-            </div>
+      {/* Property Type */}
+      <div className="flex items-center gap-3 px-4 py-1.5 hover:bg-slate-50 rounded-xl cursor-pointer transition border-b md:border-b-0 md:border-r border-slate-100">
+        <div className="text-slate-400">
+          <Home className="w-5 h-5" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
+            Property Type
+          </p>
+          <div className="flex items-center justify-between text-sm text-slate-500 font-medium">
+            <span className="truncate">Any type</span>
+            <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
+          </div>
+        </div>
+      </div>
 
-            {/* Category */}
-            <div className="flex items-center gap-3 px-4 py-2 hover:bg-slate-50 rounded-xl cursor-pointer transition border-b md:border-b-0 md:border-r border-slate-100">
-              <div className="text-slate-400">
-                <Building2 className="w-5 h-5" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
-                  Category
-                </p>
-                <div className="flex items-center justify-between text-sm text-slate-500 font-medium">
-                  <span className="truncate">Any category</span>
-                  <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
-                </div>
-              </div>
-            </div>
+      {/* Category */}
+      <div className="flex items-center gap-3 px-4 py-1.5 hover:bg-slate-50 rounded-xl cursor-pointer transition border-b md:border-b-0 md:border-r border-slate-100">
+        <div className="text-slate-400">
+          <Building2 className="w-5 h-5" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
+            Category
+          </p>
+          <div className="flex items-center justify-between text-sm text-slate-500 font-medium">
+            <span className="truncate">Any category</span>
+            <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
+          </div>
+        </div>
+      </div>
 
-            {/* City */}
-            <div className="flex items-center gap-3 px-4 py-2 hover:bg-slate-50 rounded-xl cursor-pointer transition border-b md:border-b-0 md:border-r border-slate-100">
-              <div className="text-slate-400">
-                <Castle className="w-5 h-5" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
-                  City
-                </p>
-                <div className="flex items-center justify-between text-sm text-slate-700 font-semibold">
-                  <span className="truncate">Jaipur</span>
-                  <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
-                </div>
-              </div>
-            </div>
+      {/* City */}
+      <div className="flex items-center gap-3 px-4 py-1.5 hover:bg-slate-50 rounded-xl cursor-pointer transition border-b md:border-b-0 md:border-r border-slate-100">
+        <div className="text-slate-400">
+          <Castle className="w-5 h-5" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
+            City
+          </p>
+          <div className="flex items-center justify-between text-sm text-slate-700 font-semibold">
+            <span className="truncate">Jaipur</span>
+            <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
+          </div>
+        </div>
+      </div>
 
-            {/* Location & Search Button */}
-            <div className="flex items-center gap-2 pl-2">
-              <div className="flex-1 flex items-center gap-2 px-3 py-2 hover:bg-slate-50 rounded-xl cursor-pointer transition">
-                <MapPin className="w-5 h-5 text-slate-400 shrink-0" />
-                <div className="min-w-0">
-                  <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
-                    Location
-                  </p>
-                  <span className="text-sm text-slate-500 font-medium truncate block">
-                    Any location
-                  </span>
-                </div>
-              </div>
+      {/* Location & Search Button */}
+      <div className="flex items-center gap-2 pl-2">
+        <div className="flex-1 flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 rounded-xl cursor-pointer transition">
+          <MapPin className="w-5 h-5 text-slate-400 shrink-0" />
+          <div className="min-w-0">
+            <p className="text-xs font-bold text-slate-900 tracking-wide uppercase">
+              Location
+            </p>
+            <span className="text-sm text-slate-500 font-medium truncate block">
+              Any location
+            </span>
+          </div>
+        </div>
 
-              <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-xl flex items-center gap-2 shadow-md shadow-indigo-200 transition shrink-0">
-                <Search className="w-4 h-4" />
-                <span>Search</span>
-              </button>
-            </div>
-        
+        <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-md shadow-indigo-200 transition shrink-0">
+          <Search className="w-4 h-4" />
+          <span>Search</span>
+        </button>
+      </div>
+
     </div>
   </div>
 </section>
 
 <div className="bg-[url('/property-sec-bg-img.png')] bg-no-repeat bg-center bg-cover py-6">
       {/* --- CATEGORIES SLIDER --- */}
-      <section className="px-6 lg:px-20 pt-10 max-w-8xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
+      <section className="px-6 lg:px-20 pt-4 max-w-8xl mx-auto">
+        <div className="flex items-center justify-between mb-3">
           <h2 className="text-xl font-bold text-slate-900">Browse by categories</h2>
           <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 transition">
             View all <ChevronRight className="w-4 h-4" />
@@ -380,7 +341,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
                   className="flex flex-col items-center justify-center min-w-[110px] p-4 bg-slate-50/80 hover:bg-indigo-50/50 hover:border-indigo-200 border border-transparent rounded-2xl cursor-pointer transition group"
                 >
                   <div className="p-3 bg-white text-indigo-600 rounded-full shadow-sm mb-2 group-hover:scale-110 transition duration-200">
-                    <Icon className="w-7 h-7" />
+                    <Icon className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-semibold text-slate-700 group-hover:text-indigo-600 text-center">
                     {cat.name}
@@ -541,8 +502,8 @@ const [scrolled, setScrolled] = useState<boolean>(false);
       {/* --- NEWSLETTER BANNER --- */}
       <section className="px-6 lg:px-20 py-8 max-w-8xl mx-auto">
         <div className=" relative bg-gradient-to-r from-violet-100 via-indigo-100 to-indigo-50 rounded-3xl p-8 lg:p-12 overflow-hidden border border-indigo-100 flex flex-col md:flex-row items-center justify-between gap-6">
-         <img src="/happy-stay-jaipur-home-bottom-cta-left.png" alt="hawamahal-blueprient" className="absolute left-0 top-0  w-70 h-40"/>
-          <img src="/happy-stay-jaipur-home-bottom-cta-right.png" alt="tree-blueprient"  className="absolute right-4 top-0 w-30 h-40"/>
+         <img src="/happy-stay-jaipur-home-bottom-cta-left.png" alt="hawamahal-blueprient" className="absolute left-0 top-0  w-70 h-40 opacity-50"/>
+          <img src="/happy-stay-jaipur-home-bottom-cta-right.png" alt="tree-blueprient"  className="absolute right-4 top-0 w-30 h-40 opacity-70"/>
           <div className="max-w-md z-10 ">
             <h3 className="text-2xl font-extrabold text-slate-900">
               Get the best stays & deals in Jaipur
