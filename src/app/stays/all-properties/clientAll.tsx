@@ -39,7 +39,7 @@ export default function AllPropertiesPage() {
       
 
       {/* --- PAGE HEADER --- */}
-      <section className="px-6 lg:px-20 pt-10 pb-6 max-w-8xl mx-auto">
+      <section className="px-6 lg:px-20 pt-20 pb-6 max-w-8xl mx-auto">
         <p
           className="text-xs font-bold uppercase tracking-widest mb-2"
           style={{ color: "var(--color-brand-600)" }}
