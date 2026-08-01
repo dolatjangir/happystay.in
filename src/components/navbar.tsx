@@ -74,14 +74,14 @@ const menuSections: MenuSection[] = [
     key: "stays",
     label: "Stays",
     items: [
-      { label: "All Properties", href: "#", icon: Home, description: "Browse all accommodations" },
-      { label: "Villas", href: "#", icon: Building, description: "Private luxury villas" },
-      { label: "Apartments", href: "#", icon: Hotel, description: "City apartments & flats" },
-      { label: "Hotels", href: "#", icon: Crown, description: "Boutique & chain hotels" },
-      { label: "Homestays", href: "#", icon: Users, description: "Stay with local hosts" },
-      { label: "Farmhouses", href: "#", icon: TreePine, description: "Rustic countryside stays" },
-      { label: "Budget Stays", href: "#", icon: Banknote, description: "Affordable options" },
-      { label: "Luxury Stays", href: "#", icon: Crown, description: "Premium experiences" },
+      { label: "All Properties", href: "/stays/all-properties", icon: Home, description: "Browse all accommodations" },
+      { label: "Villas", href: "/stays/villas", icon: Building, description: "Private luxury villas" },
+      { label: "Apartments", href: "/stays/apartments", icon: Hotel, description: "City apartments & flats" },
+      { label: "Hotels", href: "/stays/hotels", icon: Crown, description: "Boutique & chain hotels" },
+      { label: "Homestays", href: "/stays/homestays", icon: Users, description: "Stay with local hosts" },
+      { label: "Farmhouses", href: "/stays/farmhouses", icon: TreePine, description: "Rustic countryside stays" },
+      { label: "Budget Stays", href: "/stays/budget-stays", icon: Banknote, description: "Affordable options" },
+      { label: "Luxury Stays", href: "/stays/luxury-stays", icon: Crown, description: "Premium experiences" },
     ],
   },
   {
@@ -121,7 +121,7 @@ const menuSections: MenuSection[] = [
 
 // ─── Component ───────────────────────────────────────────
 export default function Navbar({
-  scrolled = false,
+
   isLoggedIn = false,
   user,
   onSignIn,
@@ -137,7 +137,13 @@ export default function Navbar({
   const userDropdownRef = useRef<HTMLDivElement>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const megaMenuRef = useRef<HTMLDivElement>(null);
-
+const [scrolled, setScrolled] = useState<boolean>(false);
+ 
+  useEffect(()=>{
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll)
+  },[])
   // Hover intent delay (ms) — prevents flickering when moving between trigger and dropdown
   const HOVER_DELAY = 150;
 
@@ -387,13 +393,13 @@ export default function Navbar({
 
         {/* ── Full-Width Mega Menu ── */}
         {activeSection && (
-          <div
-            ref={megaMenuRef}
-            className="hidden lg:block absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-lg shadow-slate-200/30"
-            onMouseEnter={clearCloseTimer}
-            onMouseLeave={scheduleClose}
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+         <div
+  ref={megaMenuRef}
+  className="hidden lg:block absolute top-full left-0 max-w-7xl rounded-2xl bg-[url('/megamenu-bg2.png')]  bg-cover bg-center backdrop-blur-xl  shadow-xl shadow-blue-200  mx-8"
+  onMouseEnter={clearCloseTimer}
+  onMouseLeave={scheduleClose}
+>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-blue-600/30 rounded-2xl">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {activeSection.items.map((item) => {
                   const Icon = item.icon;

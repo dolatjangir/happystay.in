@@ -175,8 +175,8 @@ const featuredStays: FeaturedStay[] = [
 export default function HappyStayLanding() {
   const heroRef = useRef<HTMLDivElement>(null);
   const searchBoxRef = useRef<HTMLDivElement>(null);
-const [scrolled, setScrolled] = useState<boolean>(false);
-  useEffect(() => {
+
+   useEffect(() => {
     // GSAP Entrance Animation
     const ctx = gsap.context(() => {
       gsap.from(".animate-fade-in", {
@@ -199,31 +199,10 @@ const [scrolled, setScrolled] = useState<boolean>(false);
     return () => ctx.revert();
   }, []);
 
-  useEffect(()=>{
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll)
-  },[])
   return (
     <div className="min-h-screen bg-[#FDFDFC] text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-600">
       {/* --- HEADER --- */}
-       {/* Logged Out */}
-      <Navbar scrolled={scrolled} />
-
-      {/* OR — Logged In */}
-      {/* <Navbar
-        scrolled={scrolled}
-        isLoggedIn={true}
-        user={{
-          name: "Rahul Sharma",
-          email: "rahul@example.com",
-          avatar: "/avatar.jpg",
-          isHost: true,
-        }}
-        onSignIn={() => console.log("Sign in")}
-        onSignUp={() => console.log("Sign up")}
-        onLogout={() => console.log("Logout")}
-      />  */}
+     
 
       {/* --- HERO SECTION --- */}
   <section
@@ -350,9 +329,7 @@ const [scrolled, setScrolled] = useState<boolean>(false);
               );
             })}
           </div>
-          {/* <button className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white p-2.5 rounded-full shadow-md border border-slate-100 hover:bg-slate-50 hidden md:flex items-center justify-center">
-            <ChevronRight className="w-4 h-4 text-slate-600" />
-          </button> */}
+         
         </div>
       </section>
 
