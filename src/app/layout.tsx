@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import HappyStayFooter from "@/components/footer";
+import LayoutWrapper from "@/components/layoutwrapper/layoutwrapper";
 
 
 
@@ -23,24 +25,12 @@ export default function RootLayout({
        
 
       <body className="min-h-full flex flex-col">
-         {/* Logged Out */}
-            <Navbar  />
+        <LayoutWrapper>
+          {children}
+          </LayoutWrapper>
+        
+       
       
-            {/* OR — Logged In */}
-            {/* <Navbar
-              scrolled={scrolled}
-              isLoggedIn={true}
-              user={{
-                name: "Rahul Sharma",
-                email: "rahul@example.com",
-                avatar: "/avatar.jpg",
-                isHost: true,
-              }}
-              onSignIn={() => console.log("Sign in")}
-              onSignUp={() => console.log("Sign up")}
-              onLogout={() => console.log("Logout")}
-            />  */}
-        {children}
         </body>
     </html>
   );

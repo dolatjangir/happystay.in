@@ -80,7 +80,7 @@ export default function AllPropertiesPage() {
 
       {/* --- CATEGORY JUMP NAV --- */}
       <nav
-        className="sticky top-0 z-30 backdrop-blur border-y"
+        className="sticky top-0 z-30 backdrop-blur border-y border-stone-50"
         style={{
           backgroundColor: "color-mix(in srgb, var(--color-surface) 92%, transparent)",
           borderColor: "var(--color-border)",

@@ -110,11 +110,11 @@ const menuSections: MenuSection[] = [
     key: "help",
     label: "Help",
     items: [
-      { label: "Contact Us", href: "#", icon: Phone, description: "Get in touch" },
-      { label: "FAQ", href: "#", icon: HelpCircle, description: "Common questions" },
-      { label: "Safety", href: "#", icon: Shield, description: "Trust & safety info" },
-      { label: "Cancellation Policy", href: "#", icon: FileText, description: "Flexible booking terms" },
-      { label: "Terms & Privacy", href: "#", icon: BookOpen, description: "Legal information" },
+      { label: "Contact Us", href: "/help/contact-us", icon: Phone, description: "Get in touch" },
+      { label: "FAQ", href: "/help/faq", icon: HelpCircle, description: "Common questions" },
+      { label: "Safety", href: "/help/safety", icon: Shield, description: "Trust & safety info" },
+      { label: "Cancellation Policy", href: "/help/cancellation-policy", icon: FileText, description: "Flexible booking terms" },
+      { label: "Terms & Privacy", href: "/help/terms-and-privacy", icon: BookOpen, description: "Legal information" },
     ],
   },
 ];
@@ -258,31 +258,33 @@ const [scrolled, setScrolled] = useState<boolean>(false);
                 </div>
               ))}
 
-              {/* Standalone Wishlist link */}
+              {/* Standalone requirement link */}
               <Link
-                href="#"
+                href="/add-requirement"
                 className="px-4 py-2.5 bg-stone-100/50 rounded-xl text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-100/80 transition-all duration-200"
               >
-                Wishlist
+                Add Requirement
               </Link>
             </nav>
 
             {/* ── Right Actions ── */}
             <div className="flex items-center gap-2">
               {/* Wishlist icon (mobile + desktop) */}
-              <button
-                className="p-2.5 rounded-full bg-stone-100/50 text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
-                aria-label="Wishlist"
-              >
-                <Heart className="w-5 h-5" />
-              </button>
+             <Link href="/favorites">
+                <button
+                  className="p-2.5 rounded-full bg-stone-100/50 text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
+                  aria-label="Wishlist"
+                >
+                  <Heart className="w-5 h-5" />
+                </button>
+              </Link>
 
-              <button
+              {/* <button
                 className="hidden sm:flex p-2.5 rounded-full bg-stone-100/50 text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
                 aria-label="Change language"
               >
                 <Globe className="w-5 h-5" />
-              </button>
+              </button> */}
 
               {/* Auth buttons or User dropdown */}
               {!isLoggedIn ? (
@@ -293,12 +295,14 @@ const [scrolled, setScrolled] = useState<boolean>(false);
                   >
                     Sign in
                   </button>
+                 <Link href="/signup">
                   <button
                     onClick={onSignUp}
                     className="px-4 py-2.5 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-md shadow-indigo-200/50 transition-all hover:shadow-lg hover:shadow-indigo-200/60 active:scale-95"
                   >
                     Sign up
                   </button>
+                  </Link>
                 </div>
               ) : (
                 <div className="relative hidden sm:block" ref={userDropdownRef}>

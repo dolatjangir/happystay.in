@@ -188,30 +188,162 @@ export const hotels: Property[] = [
 ];
 
 export const homestays: Property[] = [
-  { id: "hs1", title: "Traditional Rajasthani Homestay", location: "Bapu Nagar, Jaipur", price: "₹1,899", rating: 4.7, reviewsCount: 52, image: img.home1 },
-  { id: "hs2", title: "Family-run Garden Homestay", location: "Jagatpura, Jaipur", price: "₹1,650", rating: 4.6, reviewsCount: 38, image: img.home2 },
-  { id: "hs3", title: "Cozy Rooftop Homestay", location: "Sanganer, Jaipur", price: "₹1,499", rating: 4.5, reviewsCount: 47, image: img.home3, badge: "Guest favorite", badgeColor: "var(--color-badge-favorite)" },
-  { id: "hs4", title: "Local Culture Homestay", location: "Chandpole, Jaipur", price: "₹1,750", rating: 4.8, reviewsCount: 29, image: img.home1 },
-  { id: "hs5", title: "Peaceful Courtyard Homestay", location: "Vaishali Nagar, Jaipur", price: "₹1,999", rating: 4.4, reviewsCount: 33, image: img.home2 },
-  { id: "hs6", title: "Home-cooked Meals Homestay", location: "Malviya Nagar, Jaipur", price: "₹1,599", rating: 4.6, reviewsCount: 41, image: img.home3 },
+  {
+    id: "hs1", title: "Traditional Rajasthani Homestay", location: "Bapu Nagar, Jaipur",
+    price: "₹1,899", rating: 4.7, reviewsCount: 52, image: img.home1,
+    guests: 3, bedrooms: 1, bathrooms: 1, hostType: "Family Stay", mealsIncluded: true,
+    amenities: ["Home-cooked Meals", "Free Wifi", "Cultural Tours"],
+  },
+  {
+    id: "hs2", title: "Family-run Garden Homestay", location: "Jagatpura, Jaipur",
+    price: "₹1,650", rating: 4.6, reviewsCount: 38, image: img.home2,
+    guests: 2, bedrooms: 1, bathrooms: 1, hostType: "Family Stay", mealsIncluded: true,
+    amenities: ["Garden", "Home-cooked Meals", "Free Wifi"],
+  },
+  {
+    id: "hs3", title: "Cozy Rooftop Homestay", location: "Sanganer, Jaipur",
+    price: "₹1,499", rating: 4.5, reviewsCount: 47, image: img.home3,
+    badge: "Guest favorite", badgeColor: "var(--color-badge-favorite)",
+    guests: 2, bedrooms: 1, bathrooms: 1, hostType: "Private Room with Host", mealsIncluded: false,
+    amenities: ["Rooftop", "Free Wifi"],
+  },
+  {
+    id: "hs4", title: "Local Culture Homestay", location: "Chandpole, Jaipur",
+    price: "₹1,750", rating: 4.8, reviewsCount: 29, image: img.home1,
+    guests: 4, bedrooms: 2, bathrooms: 1, hostType: "Entire Home", mealsIncluded: false,
+    amenities: ["Kitchen", "Free Wifi", "Parking"],
+  },
+  {
+    id: "hs5", title: "Peaceful Courtyard Homestay", location: "Vaishali Nagar, Jaipur",
+    price: "₹1,999", rating: 4.4, reviewsCount: 33, image: img.home2,
+    guests: 3, bedrooms: 1, bathrooms: 1, hostType: "Private Room with Host", mealsIncluded: true,
+    amenities: ["Courtyard", "Home-cooked Meals", "Free Wifi"],
+  },
+  {
+    id: "hs6", title: "Home-cooked Meals Homestay", location: "Malviya Nagar, Jaipur",
+    price: "₹1,599", rating: 4.6, reviewsCount: 41, image: img.home3,
+    guests: 2, bedrooms: 1, bathrooms: 1, hostType: "Family Stay", mealsIncluded: true,
+    amenities: ["Home-cooked Meals", "Free Wifi", "Terrace"],
+  },
+  {
+    id: "hs7", title: "Riverside Family Homestay", location: "Amer, Jaipur",
+    price: "₹2,150", rating: 4.7, reviewsCount: 26, image: img.home1,
+    guests: 4, bedrooms: 2, bathrooms: 2, hostType: "Entire Home", mealsIncluded: false,
+    amenities: ["River View", "Kitchen", "Parking", "Free Wifi"],
+  },
+  {
+    id: "hs8", title: "Heritage Host Homestay", location: "Civil Lines, Jaipur",
+    price: "₹1,850", rating: 4.9, reviewsCount: 18, image: img.home2,
+    badge: "New", badgeColor: "var(--color-badge-new)",
+    guests: 2, bedrooms: 1, bathrooms: 1, hostType: "Private Room with Host", mealsIncluded: true,
+    amenities: ["Home-cooked Meals", "Cultural Tours", "Free Wifi"],
+  },
 ];
 
 export const farmhouses: Property[] = [
-  { id: "f1", title: "Riverside Farmhouse Retreat", location: "Chatsu Road, Jaipur", price: "₹6,499", rating: 4.7, reviewsCount: 36, image: img.farm1 },
-  { id: "f2", title: "Organic Farm Stay", location: "Bassi, Jaipur", price: "₹5,299", rating: 4.5, reviewsCount: 24, image: img.farm2, badge: "New", badgeColor: "var(--color-badge-new)" },
-  { id: "f3", title: "Weekend Farmhouse with Pool", location: "Achrol, Jaipur", price: "₹8,999", rating: 4.8, reviewsCount: 19, image: img.farm3 },
-  { id: "f4", title: "Mustard Field Farmhouse", location: "Dudu, Jaipur", price: "₹4,750", rating: 4.4, reviewsCount: 27, image: img.farm1 },
-  { id: "f5", title: "Bonfire & Barn Farmhouse", location: "Chomu, Jaipur", price: "₹7,250", rating: 4.6, reviewsCount: 31, image: img.farm2 },
-  { id: "f6", title: "Countryside Escape Farmhouse", location: "Shahpura, Jaipur", price: "₹5,999", rating: 4.5, reviewsCount: 22, image: img.farm3 },
+  {
+    id: "f1", title: "Riverside Farmhouse Retreat", location: "Chatsu Road, Jaipur",
+    price: "₹6,499", rating: 4.7, reviewsCount: 36, image: img.farm1,
+    guests: 10, bedrooms: 4, bathrooms: 3, petsAllowed: true, hasPrivatePool: false,
+    amenities: ["River View", "Bonfire", "Parking", "Free Wifi"],
+  },
+  {
+    id: "f2", title: "Organic Farm Stay", location: "Bassi, Jaipur",
+    price: "₹5,299", rating: 4.5, reviewsCount: 24, image: img.farm2,
+    badge: "New", badgeColor: "var(--color-badge-new)",
+    guests: 8, bedrooms: 3, bathrooms: 2, petsAllowed: true, hasPrivatePool: false,
+    amenities: ["Farming Experience", "Organic Meals", "Parking"],
+  },
+  {
+    id: "f3", title: "Weekend Farmhouse with Pool", location: "Achrol, Jaipur",
+    price: "₹8,999", rating: 4.8, reviewsCount: 19, image: img.farm3,
+    guests: 12, bedrooms: 5, bathrooms: 4, petsAllowed: false, hasPrivatePool: true,
+    amenities: ["Private Pool", "Bonfire", "Garden", "Free Wifi"],
+  },
+  {
+    id: "f4", title: "Mustard Field Farmhouse", location: "Dudu, Jaipur",
+    price: "₹4,750", rating: 4.4, reviewsCount: 27, image: img.farm1,
+    guests: 6, bedrooms: 2, bathrooms: 2, petsAllowed: true, hasPrivatePool: false,
+    amenities: ["Field View", "Parking", "Kitchen"],
+  },
+  {
+    id: "f5", title: "Bonfire & Barn Farmhouse", location: "Chomu, Jaipur",
+    price: "₹7,250", rating: 4.6, reviewsCount: 31, image: img.farm2,
+    guests: 10, bedrooms: 4, bathrooms: 3, petsAllowed: true, hasPrivatePool: false,
+    amenities: ["Bonfire", "Barn", "Parking", "Free Wifi"],
+  },
+  {
+    id: "f6", title: "Countryside Escape Farmhouse", location: "Shahpura, Jaipur",
+    price: "₹5,999", rating: 4.5, reviewsCount: 22, image: img.farm3,
+    guests: 8, bedrooms: 3, bathrooms: 2, petsAllowed: false, hasPrivatePool: false,
+    amenities: ["Garden", "Parking", "Kitchen"],
+  },
+  {
+    id: "f7", title: "Poolside Vineyard Farmhouse", location: "Bagru, Jaipur",
+    price: "₹9,750", rating: 4.9, reviewsCount: 14, image: img.farm1,
+    badge: "Luxury", badgeColor: "var(--color-badge-luxury)",
+    guests: 14, bedrooms: 6, bathrooms: 5, petsAllowed: false, hasPrivatePool: true,
+    amenities: ["Private Pool", "Vineyard View", "Bonfire", "Bar"],
+  },
+  {
+    id: "f8", title: "Pet-friendly Meadow Farmhouse", location: "Sanganer, Jaipur",
+    price: "₹5,499", rating: 4.6, reviewsCount: 33, image: img.farm2,
+    guests: 8, bedrooms: 3, bathrooms: 2, petsAllowed: true, hasPrivatePool: false,
+    amenities: ["Meadow", "Pet Play Area", "Parking", "Free Wifi"],
+  },
 ];
 
 export const budgetStays: Property[] = [
-  { id: "b1", title: "Fully Furnished Room", location: "Vidyadhar Nagar, Jaipur", price: "₹5,000", priceUnit: "month", rating: 4.2, reviewsCount: 45, image: img.budget1 },
-  { id: "b2", title: "Boys PG Room", location: "Malviya Nagar, Jaipur", price: "₹6,000", priceUnit: "month", rating: 4.1, reviewsCount: 58, image: img.budget2 },
-  { id: "b3", title: "Simple Shared Room", location: "Mansarovar, Jaipur", price: "₹899", rating: 4.0, reviewsCount: 63, image: img.budget1, badge: "Guest favorite", badgeColor: "var(--color-badge-favorite)" },
-  { id: "b4", title: "Backpacker Hostel Bed", location: "Bani Park, Jaipur", price: "₹549", rating: 4.3, reviewsCount: 92, image: img.budget2 },
-  { id: "b5", title: "Compact Studio Stay", location: "Jagatpura, Jaipur", price: "₹1,099", rating: 4.1, reviewsCount: 37, image: img.budget1 },
-  { id: "b6", title: "No-frills City Room", location: "Raja Park, Jaipur", price: "₹799", rating: 3.9, reviewsCount: 51, image: img.budget2 },
+  {
+    id: "b1", title: "Fully Furnished Room", location: "Vidyadhar Nagar, Jaipur",
+    price: "₹5,000", priceUnit: "month", rating: 4.2, reviewsCount: 45, image: img.budget1,
+    guests: 1, roomSharing: "Private", hasAC: true,
+    amenities: ["Free Wifi", "AC", "Furnished"],
+  },
+  {
+    id: "b2", title: "Boys PG Room", location: "Malviya Nagar, Jaipur",
+    price: "₹6,000", priceUnit: "month", rating: 4.1, reviewsCount: 58, image: img.budget2,
+    guests: 2, roomSharing: "Shared", hasAC: true,
+    amenities: ["Free Wifi", "AC", "Meals"],
+  },
+  {
+    id: "b3", title: "Simple Shared Room", location: "Mansarovar, Jaipur",
+    price: "₹899", rating: 4.0, reviewsCount: 63, image: img.budget1,
+    badge: "Guest favorite", badgeColor: "var(--color-badge-favorite)",
+    guests: 2, roomSharing: "Shared", hasAC: false,
+    amenities: ["Free Wifi", "Fan"],
+  },
+  {
+    id: "b4", title: "Backpacker Hostel Bed", location: "Bani Park, Jaipur",
+    price: "₹549", rating: 4.3, reviewsCount: 92, image: img.budget2,
+    guests: 1, roomSharing: "Dorm", hasAC: false,
+    amenities: ["Free Wifi", "Locker"],
+  },
+  {
+    id: "b5", title: "Compact Studio Stay", location: "Jagatpura, Jaipur",
+    price: "₹1,099", rating: 4.1, reviewsCount: 37, image: img.budget1,
+    guests: 2, roomSharing: "Private", hasAC: true,
+    amenities: ["Free Wifi", "AC", "Kitchenette"],
+  },
+  {
+    id: "b6", title: "No-frills City Room", location: "Raja Park, Jaipur",
+    price: "₹799", rating: 3.9, reviewsCount: 51, image: img.budget2,
+    guests: 1, roomSharing: "Private", hasAC: false,
+    amenities: ["Free Wifi", "Fan"],
+  },
+  {
+    id: "b7", title: "Girls Hostel Dorm Bed", location: "C-Scheme, Jaipur",
+    price: "₹499", rating: 4.4, reviewsCount: 74, image: img.budget1,
+    badge: "New", badgeColor: "var(--color-badge-new)",
+    guests: 1, roomSharing: "Dorm", hasAC: true,
+    amenities: ["Free Wifi", "AC", "Locker", "Meals"],
+  },
+  {
+    id: "b8", title: "AC Twin Sharing Room", location: "Tonk Road, Jaipur",
+    price: "₹1,299", rating: 4.2, reviewsCount: 40, image: img.budget2,
+    guests: 2, roomSharing: "Shared", hasAC: true,
+    amenities: ["Free Wifi", "AC", "Parking"],
+  },
 ];
 
 export const luxuryStays: Property[] = [

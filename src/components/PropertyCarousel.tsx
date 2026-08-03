@@ -22,6 +22,16 @@ export interface Property {
   furnishing?: "Furnished" | "Semi-Furnished" | "Unfurnished";
   starRating?: number; 
   breakfastIncluded?: boolean;
+  hostType?: "Family Stay" | "Private Room with Host" | "Entire Home";
+  mealsIncluded?: boolean;
+   petsAllowed?: boolean;
+  hasPrivatePool?: boolean;
+  roomSharing?: "Private" | "Shared" | "Dorm";
+  hasAC?: boolean;
+  hasConcierge?: boolean;
+  hasPrivateChef?: boolean;
+  experience?: "Palace" | "Resort" | "Private Villa" | "Penthouse";
+
 }
 
 interface PropertyCarouselProps {

@@ -503,8 +503,7 @@ export default function HappyStayLanding() {
         </div>
       </section>
 
-      {/* --- FOOTER --- */}
-      <HappyStayFooter/>
+     
     </div>
   );
 }
