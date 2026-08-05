@@ -100,10 +100,10 @@ const menuSections: MenuSection[] = [
     key: "host",
     label: "Become a Host",
     items: [
-      { label: "List Your Property", href: "#", icon: FileText, description: "Start earning today" },
-      { label: "Host Dashboard", href: "#", icon: LayoutDashboard, description: "Manage your listings" },
-      { label: "Pricing Guide", href: "#", icon: DollarSign, description: "Optimize your rates" },
-      { label: "Host Support", href: "#", icon: HeadphonesIcon, description: "24/7 dedicated help" },
+      { label: "List Your Property", href: "/become-a-host/list-your-property", icon: FileText, description: "Start earning today" },
+      { label: "Host Dashboard", href: "/become-a-host/host-dashboard", icon: LayoutDashboard, description: "Manage your listings" },
+      { label: "Pricing Guide", href: "/become-a-host/pricing-guide", icon: DollarSign, description: "Optimize your rates" },
+      { label: "Host Support", href: "/become-a-host/host-support", icon: HeadphonesIcon, description: "24/7 dedicated help" },
     ],
   },
   {

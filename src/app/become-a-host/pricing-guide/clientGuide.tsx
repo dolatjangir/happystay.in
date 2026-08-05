@@ -140,67 +140,144 @@ export default function PricingGuidePage() {
       {/* ============================================================ */}
       {/*  HERO SECTION                                                */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-50/50 via-bg to-bg" />
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
-          <svg viewBox="0 0 400 400" className="w-full h-full">
-            <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" fill="none" className="text-brand-600" />
-            <circle cx="200" cy="200" r="100" stroke="currentColor" strokeWidth="1" fill="none" className="text-brand-600" />
-            <circle cx="200" cy="200" r="50" stroke="currentColor" strokeWidth="1" fill="none" className="text-brand-600" />
-          </svg>
+{/* Hero Section */}
+<section className="container mx-auto px-6 py-8 md:py-12 grid md:grid-cols-2 gap-10 items-center">
+  <div className="space-y-8">
+    <div className="flex items-center gap-2 bg-brand-50 text-brand-700 px-4 py-2 rounded-full font-bold text-xs tracking-wide inline-flex uppercase border border-brand-100">
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z" stroke="currentColor" strokeWidth="2"/>
+        <path d="M7 13V10M10 13V7M13 13V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+      <span>Pricing Guide</span>
+    </div>
+
+    <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.15] tracking-tight text-text-primary">
+      Price Smart.<br />
+      <span className="relative text-brand-600 inline-block mt-2">
+        Earn More.
+        <span className="absolute -bottom-1 left-0 w-full h-1.5 bg-brand-600 rounded-full opacity-80"></span>
+      </span>
+    </h1>
+
+    <p className="text-lg text-text-secondary leading-relaxed max-w-xl">
+      Set the perfect price for your property with real-time market insights and data-backed recommendations. <br />
+      <span className="font-semibold text-text-primary mt-2 block">
+        HappyStay hosts earn up to <span className="text-brand-600 font-bold">40% more</span> than those who don`t.
+      </span>
+    </p>
+
+    <div className="flex flex-wrap gap-4 pt-4">
+      <button 
+       onClick={() => {
+    if (!showEstimator) {
+      setShowEstimator(true);
+
+      setTimeout(() => {
+        document.getElementById("estimator")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    } else {
+      setShowEstimator(false);
+    }
+  }}
+      className="bg-brand-600 text-white px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-brand-700 transition shadow-md">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+        calcuate your earnings
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button className="bg-surface text-text-body border border-border-strong px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-surface-muted transition shadow-sm">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.3333 3H4.66667C3.74619 3 3 3.74619 3 4.66667V19.3333C3 20.2538 3.74619 21 4.66667 21H19.3333C20.2538 21 21 20.2538 21 19.3333V4.66667C21 3.74619 20.2538 3 19.3333 3ZM12 18V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+        List Your Property
+      </button>
+    </div>
+
+    <div className="flex flex-wrap gap-6 pt-6 text-sm font-medium text-text-muted">
+      {[
+        { label: 'Data-backed Insights', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3h-2v10h2V3zm4 8h-2v10h2V11zm4-6h-2v16h2V5zM9 17H7v4h2v-4zm-4-4H3v8h2v-8z" fill="currentColor"/></svg> },
+        { label: 'Real-time Updates', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11v-4h2v4zm0-6H11V8h2v2z" fill="currentColor"/></svg> },
+        { label: 'Maximize Earnings', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 11V3h8v8h-8zm0 10v-8h8v8h-8zM0 11V3h8v8H0zm0 10v-8h8v8H0z" fill="currentColor"/></svg> },
+      ].map(({ label, icon }) => (
+        <div key={label} className="flex items-center gap-2">
+          <span className="text-brand-600">{icon}</span>
+          <span>{label}</span>
         </div>
-        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider border border-brand-100 mb-6">
-              <Sparkles size={14} className="mr-1.5" /> Pricing Guide
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary leading-[1.1] tracking-tight mb-6">
-              Price Smart.<br />
-              Earn <span className="text-brand-600">More.</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-8">
-              Learn how to set the perfect price for your property. HappyStay hosts who follow our pricing guide earn up to <span className="font-bold text-brand-600">40% more</span> than those who don&apos;t.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
-                onClick={() => setShowEstimator(true)}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg shadow-brand-600/25 hover:shadow-brand-600/40 hover:-translate-y-0.5"
-              >
-                <DollarSign size={18} />
-                Try Earnings Estimator
-                <ArrowRight size={16} />
-              </button>
-              <a href="/host/list-property" className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-border-strong text-text-secondary text-sm font-bold rounded-xl hover:border-brand-300 hover:bg-brand-50 transition-all duration-200">
-                List Your Property
-              </a>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-10 pt-8 border-t border-border">
-              {[
-                { value: "₹4,200", label: "Avg. Nightly Rate", icon: <DollarSign size={16} /> },
-                { value: "78%", label: "Avg. Occupancy", icon: <BarChart3 size={16} /> },
-                { value: "₹1.2L", label: "Avg. Monthly Earnings", icon: <TrendingUp size={16} /> },
-                { value: "4.8★", label: "Avg. Host Rating", icon: <Star size={16} /> },
-              ].map((stat) => (
-                <div key={stat.label} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center border border-brand-100">
-                    <span className="text-brand-600">{stat.icon}</span>
-                  </div>
-                  <div className="text-left">
-                    <p className="text-lg font-bold text-text-primary">{stat.value}</p>
-                    <p className="text-xs text-text-muted">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Right side Image */}
+{/* Right side Image Container */}
+<div className="relative mt-8 md:mt-0 w-full max-w-2xl mx-auto">
+  {/* Soft brand-tinted shadow stroke behind */}
+  <div
+    className="absolute inset-0 bg-brand-100 opacity-60 pointer-events-none"
+    style={{
+      WebkitMaskImage: "url('/brush-stroke-mask.png')",
+      maskImage: "url('/brush-stroke-mask.png')",
+      WebkitMaskSize: "100% 100%",
+      maskSize: "100% 100%",
+      WebkitMaskRepeat: "no-repeat",
+      maskRepeat: "no-repeat",
+      transform: "translate(12px, 12px)",
+    }}
+  />
+
+  {/* Main brush-stroke masked image */}
+  <img
+    src="https://img.magnific.com/free-photo/cozy-dining-room-modern-apartment_181624-61506.jpg?semt=ais_hybrid&w=740&q=80"
+    alt="Modern house interior preview"
+    width={900}
+    height={740}
+    className="relative w-full h-auto object-cover"
+    style={{
+      WebkitMaskImage: "url('/brush-stroke-mask.png')",
+      maskImage: "url('/brush-stroke-mask.png')",
+      WebkitMaskSize: "100% 100%",
+      maskSize: "100% 100%",
+      WebkitMaskRepeat: "no-repeat",
+      maskRepeat: "no-repeat",
+      aspectRatio: "4 / 3",
+    }}
+  />
+</div>
+</section>
+
+{/* Stats Bar */}
+<section className="container mx-auto px-6 pb-4">
+  <div className="bg-surface rounded-3xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 shadow-xl border border-border">
+    {[
+      { label: 'Avg. Nightly Rate', value: '₹4,200', icon: '₹' },
+      { label: 'Avg. Occupancy', value: '78%', icon: <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.3333 4V17.3333H18.6667V4H13.3333ZM4 17.3333V28H9.33333V17.3333H4ZM22.6667 9.33333V28H28V9.33333H22.6667ZM13.3333 21.3333V28H18.6667V21.3333H13.3333Z" fill="currentColor"/></svg> },
+      { label: 'Avg. Monthly Earnings', value: '₹1.2L', icon: <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3333 2.66667L24 4.01333L29.9867 10L24 15.9867L25.3333 17.3333L32 10L25.3333 2.66667ZM16 10.6667L14.6667 12L20.6667 18L14.6667 24L16 25.3333L22.6667 18L16 10.6667ZM8 18.6667L6.66667 20L12.6667 26L6.66667 32L8 33.3333L14.6667 26L8 18.6667Z" fill="currentColor"/></svg> },
+      { label: 'Avg. Host Rating', value: '4.8+', icon: <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2L20.9 12L31.3 13.5L23.7 20.8L25.5 31.2L16 26.2L6.5 31.2L8.3 20.8L0.7 13.5L11.1 12L16 2Z" fill="var(--color-rating)"/></svg> },
+    ].map(({ label, value, icon }, idx) => (
+      <div key={label} className={`flex items-center gap-4 ${idx !== 3 ? 'md:border-r border-border md:pr-4' : ''}`}>
+        <div className="bg-brand-50 text-brand-600 min-w-12 w-12 h-12 rounded-full flex items-center justify-center font-bold text-2xl">
+          {icon}
         </div>
-      </section>
+        <div className="flex flex-col">
+          <span className="text-2xl font-extrabold text-text-primary leading-tight">{value}</span>
+          <span className="text-sm text-text-muted whitespace-nowrap">{label}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* ============================================================ */}
       {/*  EARNINGS ESTIMATOR (Sticky/Modal-like section)              */}
       {/* ============================================================ */}
       {showEstimator && (
-        <section className="bg-surface border-b border-border" id="estimator">
+        <section id="estimator" className="bg-surface border-b border-border">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
             <div className="flex items-center justify-between mb-8">
               <div>
