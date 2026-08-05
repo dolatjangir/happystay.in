@@ -88,12 +88,12 @@ const menuSections: MenuSection[] = [
     key: "explore",
     label: "Explore Jaipur",
     items: [
-      { label: "Tourist Places", href: "#", icon: MapPin, description: "Top attractions & sights" },
-      { label: "Restaurants", href: "#", icon: Utensils, description: "Best dining spots" },
-      { label: "Shopping", href: "#", icon: ShoppingBag, description: "Markets & malls" },
-      { label: "Nightlife", href: "#", icon: Music, description: "Bars, clubs & lounges" },
-      { label: "Events", href: "#", icon: Ticket, description: "Festivals & happenings" },
-      { label: "Local Guides", href: "#", icon: Users, description: "Expert city tours" },
+      { label: "Tourist Places", href: "/explore-jaipur/tourist-places", icon: MapPin, description: "Top attractions & sights" },
+      { label: "Restaurants", href: "/explore-jaipur/restaurants", icon: Utensils, description: "Best dining spots" },
+      { label: "Shopping", href: "/explore-jaipur/shopping", icon: ShoppingBag, description: "Markets & malls" },
+      { label: "Nightlife", href: "/explore-jaipur/night-life", icon: Music, description: "Bars, clubs & lounges" },
+      { label: "Events", href: "/explore-jaipur/events", icon: Ticket, description: "Festivals & happenings" },
+      { label: "Local Guides", href: "/explore-jaipur/local-guide", icon: Users, description: "Expert city tours" },
     ],
   },
   {
