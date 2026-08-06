@@ -228,18 +228,18 @@ function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1600&q=80"
+          src="/tourist-places-hero-bg.png"
           alt="Hawa Mahal Jaipur"
           fill
           className="object-cover object-center"
           priority
         />
         {/* Gradient overlay - heavier on left for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" /> */}
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" /> */}
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-40">
         <div className="flex min-h-[560px] lg:min-h-[620px] items-center">
           <div className="w-full lg:w-1/2 pt-12 pb-32 lg:pb-40">
             {/* Label */}
@@ -274,7 +274,7 @@ function Hero() {
       </div>
 
       {/* Search Bar - overlapping bottom */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 -mt-16 mb-12">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 -mt-28 mb-12">
         <div
           className="rounded-2xl bg-surface border border-border p-4 sm:p-5"
           style={{ boxShadow: "0 8px 40px rgba(99, 102, 241, 0.12)" }}
@@ -283,33 +283,33 @@ function Hero() {
             {/* All Places */}
             <div className="flex-1 relative">
               <button className="w-full flex items-center justify-between rounded-xl border border-border-strong bg-surface-muted px-4 py-3.5 text-sm text-text-primary hover:border-brand-200 transition-colors">
-                <span className="flex items-center gap-2.5">
-                  <Landmark className="h-5 w-5 text-text-faint" />
+                <span className="flex items-center gap-2.5 text-brand-500 font-bold">
+                  <Landmark className="h-5 w-5 text-brand-700" />
                   All Places
                 </span>
-                <ChevronDown className="h-4 w-4 text-text-muted" />
+                <ChevronDown className="h-4 w-4 text-brand-700" />
               </button>
             </div>
 
             {/* Best Time */}
             <div className="flex-1 relative">
               <button className="w-full flex items-center justify-between rounded-xl border border-border-strong bg-surface-muted px-4 py-3.5 text-sm text-text-primary hover:border-brand-200 transition-colors">
-                <span className="flex items-center gap-2.5">
-                  <CalendarDays className="h-5 w-5 text-text-faint" />
+                <span className="flex items-center text-brand-700 font-bold gap-2.5">
+                  <CalendarDays className="h-5 w-5 text-brand-700" />
                   Best Time
                 </span>
-                <ChevronDown className="h-4 w-4 text-text-muted" />
+                <ChevronDown className="h-4 w-4 text-brand-700" />
               </button>
             </div>
 
             {/* Location */}
             <div className="flex-1 relative">
               <button className="w-full flex items-center justify-between rounded-xl border border-border-strong bg-surface-muted px-4 py-3.5 text-sm text-text-primary hover:border-brand-200 transition-colors">
-                <span className="flex items-center gap-2.5">
-                  <MapPin className="h-5 w-5 text-text-faint" />
+                <span className="flex items-center text-brand-700 font-bold gap-2.5">
+                  <MapPin className="h-5 w-5 text-brand-700" />
                   Jaipur
                 </span>
-                <ChevronDown className="h-4 w-4 text-text-muted" />
+                <ChevronDown className="h-4 w-4 text-brand-700" />
               </button>
             </div>
 
@@ -331,11 +331,11 @@ function Hero() {
 function SectionLabel({ text }: { text: string }) {
   return (
     <div className="flex items-center justify-center gap-4 mb-3">
-      <span className="h-px w-10 bg-border-strong" />
-      <span className="text-xs font-semibold tracking-[0.2em] text-text-muted uppercase">
+      <span className="h-px w-10 bg-(--color-badge-luxury)" />
+      <span className="text-xs font-semibold tracking-[0.2em] text-(--color-badge-luxury) uppercase">
         {text}
       </span>
-      <span className="h-px w-10 bg-border-strong" />
+      <span className="h-px w-10 bg-(--color-badge-luxury)" />
     </div>
   );
 }
@@ -345,10 +345,10 @@ function FeaturedPlaces() {
     <section className="py-12 lg:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionLabel text="Featured" />
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary text-center mb-3">
+        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl font-bold text-(--color-badge-luxury) text-center mb-3">
           Top Tourist Places in Jaipur
         </h2>
-        <p className="text-center text-text-muted text-base sm:text-lg max-w-2xl mx-auto mb-10">
+        <p className="text-center text-(--color-badge-new) text-base sm:text-lg max-w-2xl mx-auto mb-10">
           Explore the timeless beauty of Jaipur with our handpicked destinations
         </p>
 
@@ -363,7 +363,7 @@ function FeaturedPlaces() {
               }}
             >
               {/* Image */}
-              <div className="relative h-64 sm:h-56 overflow-hidden">
+              <div className="relative h-64 sm:h-74 overflow-hidden">
                 <Image
                   src={place.image}
                   alt={place.name}
@@ -371,7 +371,7 @@ function FeaturedPlaces() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Gradient overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-950  via-indigo-950/30 to-transparent" />
 
                 {/* Rank Badge */}
                 <div className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 text-white text-xs font-bold"
@@ -421,10 +421,10 @@ function FeaturedPlaces() {
 
 function TopExperiences() {
   return (
-    <section className="py-12 lg:py-16" style={{ backgroundColor: "var(--color-surface-muted)" }}>
+    <section className="py-4" >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionLabel text="Explore" />
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary text-center mb-10">
+        <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-700 text-center mb-6">
           Top Experiences in Jaipur
         </h2>
 
@@ -434,10 +434,10 @@ function TopExperiences() {
               key={exp.label}
               className="flex flex-col items-center gap-3 group cursor-pointer"
             >
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-brand-200 bg-surface text-brand-600 group-hover:bg-brand-600 group-hover:text-white group-hover:border-brand-600 transition-all duration-300"
+              <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-brand-100 bg-linear-to-tl from-(--color-brand-300) via-(--color-brand-100) to-transparent text-brand-600 group-hover:bg-brand-100 group-hover:text-white group-hover:border-brand-600 group-hover:rotate-360 transition-all duration-300"
                 style={{ boxShadow: "0 2px 8px rgba(99, 102, 241, 0.08)" }}
               >
-                <exp.icon className="h-8 w-8" strokeWidth={1.5} />
+                <exp.icon className="h-8 w-8 group-hover:text-(--color-badge-new)" strokeWidth={1.5} />
               </div>
               <span className="text-sm font-medium text-text-secondary text-center group-hover:text-brand-600 transition-colors">
                 {exp.label}
@@ -452,69 +452,72 @@ function TopExperiences() {
 
 function WhyVisit() {
   return (
-    <section className="py-12 lg:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-surface border border-border overflow-hidden"
-          style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Image */}
-            <div className="relative h-64 sm:h-80 lg:h-auto min-h-[320px]">
-              <Image
-                src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80"
-                alt="Amber Fort Jaipur"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 lg:bg-gradient-to-l" />
-            </div>
+   <section className="py-12 lg:py-16">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="rounded-3xl bg-brand-200 border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+      <div className="grid grid-cols-1 lg:grid-cols-5">
+        {/* Image — 1/4 width on desktop, full-width stacked on mobile */}
+  
 
-            {/* Content */}
-            <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-text-primary mb-8 text-center lg:text-left">
-                Why Visit Jaipur?
-              </h2>
+        <div className="relative h-64 sm:h-80 lg:h-full lg:col-span-2">
+          <Image
+            src="/tourist-places-bottom-cta-img.png"
+            alt="Amber Fort Jaipur"
+            fill
+            className="object-cover object-center object-bottom"
+            sizes="(max-width: 1024px) 100vw, 25vw"
+           
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {reasons.map((reason) => (
-                  <div key={reason.title} className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                      <reason.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-semibold text-text-primary mb-0.5">
-                        {reason.title}
-                      </h3>
-                      <p className="text-sm text-text-muted">{reason.desc}</p>
-                    </div>
-                  </div>
-                ))}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 lg:bg-gradient-to-l" />
+        </div>
+
+        {/* Content — 3/4 width on desktop */}
+        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center lg:col-span-3">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-brand-700 mb-8 text-center lg:text-left">
+            Why Visit Jaipur?
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {reasons.map((reason) => (
+              <div key={reason.title} className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                  <reason.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-brand-600 mb-0.5">
+                    {reason.title}
+                  </h3>
+                  <p className="text-sm text-brand-600/80">{reason.desc}</p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }
 
 function CTABanner() {
   return (
-    <section className="py-12 lg:py-16">
+    <section className="py-6">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl">
           {/* Background */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 ">
             <Image
-              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1600&q=80"
+              src="/tourist-place-bottom-cta2.png"
               alt="Rajasthan Sunset"
               fill
-              className="object-cover"
+              className="object-cover "
             />
-            <div className="absolute inset-0" style={{ backgroundColor: "rgba(67, 56, 202, 0.82)" }} />
+            {/* <div className="absolute inset-0" style={{ backgroundColor: "rgba(67, 56, 202, 0.82)" }} /> */}
           </div>
 
-          <div className="relative px-6 py-16 sm:py-20 text-center">
+          <div className="relative px-6 py-14 text-center">
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
               Plan Your Jaipur Adventure Today
             </h2>
@@ -540,7 +543,7 @@ function CTABanner() {
 export default function TouristPlacesPage() {
   return (
     <main
-      className={`${playfair.variable} ${inter.variable} ${dancing.variable} min-h-screen bg-bg font-[family-name:var(--font-inter)]`}
+      className={`${playfair.variable} ${inter.variable} ${dancing.variable} min-h-screen bg-brand-50/50 font-[family-name:var(--font-inter)]`}
     >
       {/* <Navbar /> */}
       <Hero />

@@ -279,7 +279,8 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <>
+    <section className="relative w-full overflow-hidden pt-10">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -289,11 +290,11 @@ function Hero() {
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-16 lg:px-20">
         <div className="flex min-h-[500px] sm:min-h-[540px] items-center">
           <div className="w-full lg:w-1/2 pt-10 pb-28 sm:pb-32">
             {/* Script label */}
@@ -305,7 +306,7 @@ function Hero() {
             <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] mb-4">
               Best<br />
               Restaurants<br />
-              in Jaipur
+              in <span className="text-brand-700">Jaipur</span>
             </h1>
 
             {/* Description */}
@@ -324,11 +325,13 @@ function Hero() {
         </div>
       </div>
 
+    
+    </section>
       {/* Search Bar */}
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-14 mb-10">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-14 mb-10 ">
         <div
           className="rounded-2xl bg-surface border border-border p-3 sm:p-4"
-          style={{ boxShadow: "0 8px 40px rgba(99, 102, 241, 0.1)" }}
+          style={{ boxShadow: "0 8px 60px rgba(99, 102, 241, 0.1)" }}
         >
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             {/* Search Input */}
@@ -382,7 +385,8 @@ function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </>
+    
   );
 }
 
@@ -390,9 +394,9 @@ function CategoryFilter() {
   const [active, setActive] = useState("All");
 
   return (
-    <section className="pb-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-2 overflow-x-auto scrollbar-none pb-2">
+    <section className="">
+      <div className="mx-auto max-w-6xl  px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2 overflow-x-auto scrollbar-none">
           {categories.map((cat) => {
             const isActive = active === cat.label;
             return (
@@ -402,7 +406,7 @@ function CategoryFilter() {
                 className={`flex flex-col items-center gap-2 min-w-[72px] px-3 py-3 rounded-xl transition-all duration-200 ${
                   isActive
                     ? "bg-brand-50 text-brand-600"
-                    : "bg-surface text-text-secondary hover:bg-surface-muted hover:text-text-primary"
+                    : "bg-surface text-text-secondary hover:bg-surface-muted hover:text-brand-600"
                 }`}
               >
                 <cat.icon
@@ -433,7 +437,7 @@ function SectionLabel({ text, script = false }: { text: string; script?: boolean
     );
   }
   return (
-    <div className="flex items-center justify-center gap-4 mb-3">
+    <div className="flex items-center justify-center gap-4">
       <span className="h-px w-10 bg-border-strong" />
       <span className="text-xs font-semibold tracking-[0.2em] text-text-muted uppercase">
         {text}
@@ -515,7 +519,7 @@ function RestaurantCard({
 
 function TopRestaurants() {
   return (
-    <section className="py-8 lg:py-12">
+    <section className="py-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionLabel text="Handpicked for You" script />
         <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-text-primary text-center mb-2">
@@ -544,7 +548,7 @@ function TopRestaurants() {
 
 function RooftopSection() {
   return (
-    <section className="py-10 lg:py-14">
+    <section className="py-6">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           className="relative rounded-3xl bg-surface border border-border overflow-hidden"
