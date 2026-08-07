@@ -10,9 +10,9 @@ import Link from "next/link";
 
 const LogoIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <rect width="32" height="32" rx="8" fill="#7c3aed" />
+    <rect width="32" height="32" rx="8" fill="#4f46e5" />
     <path d="M8 24L16 8L24 24H8Z" fill="white" />
-    <circle cx="16" cy="18" r="3" fill="#ddd6fe" />
+    <circle cx="16" cy="18" r="3" fill="#e0e7ff" />
   </svg>
 );
 
@@ -238,7 +238,7 @@ const events = [
     category: "Festival",
     price: "₹299 onwards",
     badge: "FEATURED",
-    badgeColor: "bg-purple-600",
+    badgeColor: "bg-brand-600",
     image: "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=600&h=400&fit=crop",
   },
   {
@@ -250,7 +250,7 @@ const events = [
     category: "Music & Concert",
     price: "₹999 onwards",
     badge: "POPULAR",
-    badgeColor: "bg-purple-600",
+    badgeColor: "bg-brand-600",
     image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&h=400&fit=crop",
   },
   {
@@ -262,7 +262,7 @@ const events = [
     category: "Festival",
     price: "Free Entry",
     badge: "TRENDING",
-    badgeColor: "bg-purple-600",
+    badgeColor: "bg-brand-600",
     image: "https://images.unsplash.com/photo-1533230408706-9f97cd3cd6d0?w=600&h=400&fit=crop",
   },
   {
@@ -274,7 +274,7 @@ const events = [
     category: "Exhibition",
     price: "₹50 onwards",
     badge: "NEW",
-    badgeColor: "bg-purple-600",
+    badgeColor: "bg-brand-600",
     image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&h=400&fit=crop",
   },
 ];
@@ -332,26 +332,26 @@ export default function EventsPage() {
      
 
       {/* ─────────── HERO ─────────── */}
-      <section className="relative">
+      <section className="relative h-[75dvh]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1533230408706-9f97cd3cd6d0?w=1600&h=800&fit=crop"
+            src="/events-hero-img.png"
             alt="Jaipur Events"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/40 to-white/10" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" /> */}
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-36">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-12 lg:px-16 pt-28 pb-36">
           <div className="max-w-lg">
-            <p className="text-purple-600 text-lg sm:text-xl font-medium italic mb-2" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="text-brand-600 text-lg sm:text-xl font-medium italic mb-2" style={{ fontFamily: "Georgia, serif" }}>
               Celebrate the Pink City
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.05] mb-4" style={{ fontFamily: "Georgia, serif" }}>
-              Events in <span className="text-purple-600">Jaipur</span>
+              Events in <span className="text-brand-600">Jaipur</span>
             </h1>
             <p className="text-text-secondary text-base sm:text-lg mb-8 max-w-md">
               From royal festivals to vibrant cultural celebrations – discover the best events happening in the Pink City.
@@ -360,7 +360,7 @@ export default function EventsPage() {
             <div className="flex flex-wrap gap-3 mb-8">
               {heroFeatures.map((f, i) => (
                 <div key={i} className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/80 backdrop-blur-sm border border-border-strong shadow-sm text-sm text-text-secondary">
-                  <span className="text-purple-600">{f.icon}</span>
+                  <span className="text-brand-600">{f.icon}</span>
                   <span className="text-xs sm:text-sm font-medium">{f.label}</span>
                 </div>
               ))}
@@ -368,8 +368,10 @@ export default function EventsPage() {
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 -mt-20 mb-12">
+      
+      </section>
+  {/* Search Bar */}
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 -mt-10 mb-12">
           <div className="bg-surface rounded-2xl shadow-lg border border-border p-4 sm:p-5">
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Search */}
@@ -446,21 +448,21 @@ export default function EventsPage() {
               </div>
 
               {/* Button */}
-              <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-700 transition-colors shadow-sm flex items-center justify-center gap-2 flex-shrink-0">
+              <button className="px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 transition-colors shadow-sm flex items-center justify-center gap-2 flex-shrink-0">
                 Search Events
               </button>
             </div>
           </div>
         </div>
-      </section>
+
 
       {/* ─────────── CATEGORIES ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-2">
-            <div className="h-px w-12 bg-purple-300" />
-            <p className="text-purple-600 text-lg italic" style={{ fontFamily: "Georgia, serif" }}>What&apos;s Happening</p>
-            <div className="h-px w-12 bg-purple-300" />
+            <div className="h-px w-12 bg-brand-200" />
+            <p className="text-brand-600 text-lg italic" style={{ fontFamily: "Georgia, serif" }}>What&apos;s Happening</p>
+            <div className="h-px w-12 bg-brand-200" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">Upcoming Events in Jaipur</h2>
           <p className="text-text-muted text-sm">Explore concerts, festivals, workshops, exhibitions and more.</p>
@@ -472,11 +474,11 @@ export default function EventsPage() {
               key={cat.name}
               className={`group flex flex-col items-center gap-2 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl border transition-all min-w-[80px] sm:min-w-[100px] ${
                 cat.active
-                  ? "border-purple-600 bg-purple-600 text-white shadow-md"
-                  : "border-border-strong bg-surface text-text-secondary hover:border-purple-300 hover:text-purple-600"
+                  ? "border-brand-600 bg-brand-600 text-white shadow-md"
+                  : "border-border-strong bg-surface text-text-secondary hover:border-brand-200 hover:text-brand-600"
               }`}
             >
-              <span className={cat.active ? "text-white" : "text-text-muted group-hover:text-purple-600"}>
+              <span className={cat.active ? "text-white" : "text-text-muted group-hover:text-brand-600"}>
                 {cat.icon}
               </span>
               <span className="text-[10px] sm:text-xs font-medium text-center leading-tight">{cat.name}</span>
@@ -491,7 +493,7 @@ export default function EventsPage() {
           {events.map((evt) => (
             <div
               key={evt.name}
-              className="group bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all cursor-pointer"
+              className="group bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all cursor-pointer"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -501,10 +503,10 @@ export default function EventsPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider">
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">
                   {evt.badge}
                 </div>
-                <button className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-purple-500/80 transition-colors">
+                <button className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-brand-600/80 transition-colors">
                   <HeartIcon className="w-4 h-4" />
                 </button>
               </div>
@@ -512,9 +514,9 @@ export default function EventsPage() {
               {/* Content */}
               <div className="p-4">
                 <div className="flex items-start gap-3 mb-2">
-                  <div className="flex flex-col items-center bg-purple-50 rounded-lg px-2.5 py-1.5 border border-purple-100">
-                    <span className="text-xs font-bold text-purple-700">{evt.date}</span>
-                    <span className="text-[10px] font-semibold text-purple-500 uppercase">{evt.month}</span>
+                  <div className="flex flex-col items-center bg-brand-50 rounded-lg px-2.5 py-1.5 border border-brand-100">
+                    <span className="text-xs font-bold text-brand-700">{evt.date}</span>
+                    <span className="text-[10px] font-semibold text-brand-500 uppercase">{evt.month}</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-text-primary text-sm leading-tight mb-0.5">{evt.name}</h3>
@@ -526,10 +528,10 @@ export default function EventsPage() {
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed mb-3 line-clamp-2">{evt.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="px-2 py-0.5 rounded-md bg-purple-50 text-purple-600 text-[10px] font-semibold border border-purple-100">
+                  <span className="px-2 py-0.5 rounded-md bg-brand-50 text-brand-600 text-[10px] font-semibold border border-brand-100">
                     {evt.category}
                   </span>
-                  <span className="text-xs font-bold text-purple-600">{evt.price}</span>
+                  <span className="text-xs font-bold text-brand-600">{evt.price}</span>
                 </div>
               </div>
             </div>
@@ -538,7 +540,7 @@ export default function EventsPage() {
 
         {/* View All Button */}
         <div className="flex justify-center mt-8">
-          <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-purple-600 text-purple-600 font-semibold text-sm hover:bg-purple-600 hover:text-white transition-all">
+          <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-brand-600 text-brand-600 font-semibold text-sm hover:bg-brand-600 hover:text-white transition-all">
             View All Events
             <ArrowRightIcon className="w-4 h-4" />
           </button>
@@ -546,90 +548,113 @@ export default function EventsPage() {
       </section>
 
       {/* ─────────── CALENDAR & WHY ATTEND ─────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Calendar Card */}
-          <div className="bg-purple-900 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <p className="text-purple-300 text-sm italic mb-1" style={{ fontFamily: "Georgia, serif" }}>Don&apos;t Miss Out!</p>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-2">Jaipur Events<br />Calendar 2025</h3>
-              <p className="text-purple-200 text-sm mb-6 max-w-xs">
-                Your go-to guide for all major events, festivals and celebrations in Jaipur.
-              </p>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    
+    {/* ─── Calendar Card ─── */}
+    <div className="relative bg-brand-700 rounded-3xl p-6 sm:p-8 text-white overflow-hidden min-h-[420px] sm:min-h-[460px]">
+      
+      {/* Background Image — Bottom Right */}
+      <img 
+        src="/list-a-property-page-hero-bg2.png" 
+        alt="" 
+        className="absolute bottom-0 right-0 w-1/2 h-1/2 object-contain object-right-bottom opacity-25 pointer-events-none select-none z-0"
+      />
 
-              <ul className="space-y-2.5 mb-6">
-                {["Monthly updated events", "Exclusive offers & discounts", "Save your favorite events"].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-purple-100">
-                    <CheckIcon className="w-4 h-4 text-purple-300 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+      {/* Content Layer */}
+      <div className="relative z-10 max-w-xs">
+        <p className="text-brand-200 text-sm italic mb-1" style={{ fontFamily: "Georgia, serif" }}>
+          Don&apos;t Miss Out!
+        </p>
+        <h3 className="text-2xl sm:text-3xl font-bold mb-2">
+          Jaipur Events<br />Calendar 2025
+        </h3>
+        <p className="text-brand-100 text-sm mb-6">
+          Your go-to guide for all major events, festivals and celebrations in Jaipur.
+        </p>
 
-              <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-purple-900 font-semibold text-sm hover:bg-purple-50 transition-colors">
-                <DownloadIcon className="w-4 h-4" />
-                Download Calendar
-              </button>
-            </div>
+        <ul className="space-y-2.5 mb-6">
+          {["Monthly updated events", "Exclusive offers & discounts", "Save your favorite events"].map((item) => (
+            <li key={item} className="flex items-center gap-2 text-sm text-brand-100">
+              <CheckIcon className="w-4 h-4 text-brand-200 flex-shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
 
-            {/* Calendar Widget */}
-            <div className="mt-8 sm:mt-0 sm:absolute sm:top-1/2 sm:right-8 sm:-translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-              <div className="flex items-center justify-between mb-3">
-                <button className="text-white/60 hover:text-white text-xs">&lt;</button>
-                <span className="text-sm font-semibold text-white">May 2025</span>
-                <button className="text-white/60 hover:text-white text-xs">&gt;</button>
-              </div>
-              <div className="grid grid-cols-7 gap-1 text-center">
-                {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((d) => (
-                  <span key={d} className="text-[9px] text-purple-300 font-semibold py-1">{d}</span>
-                ))}
-                {calendarDays.flat().map((day, i) => (
-                  <span
-                    key={i}
-                    className={`text-xs py-1.5 rounded-md ${
-                      day === "24"
-                        ? "bg-purple-500 text-white font-bold"
-                        : day
-                        ? "text-white/80 hover:bg-white/10"
-                        : ""
-                    }`}
-                  >
-                    {day}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+        <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-brand-700 font-semibold text-sm hover:bg-brand-50 transition-colors">
+          <DownloadIcon className="w-4 h-4" />
+          Download Calendar
+        </button>
+      </div>
 
-          {/* Why Attend */}
-          <div className="bg-surface rounded-3xl border border-border p-6 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-6">Why Attend Events in Jaipur?</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {whyAttend.map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-text-primary text-sm">{item.title}</h4>
-                    <p className="text-text-muted text-xs mt-0.5 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Calendar Widget — sits above the bg image */}
+      <div className="mt-8 sm:mt-0 sm:absolute sm:top-1/2 sm:right-6 lg:right-8 sm:-translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 relative z-10">
+        <div className="flex items-center justify-between mb-3">
+          
+          <button className="text-white/60 hover:text-white text-xs">&lt;</button>
+          <span className="text-sm font-semibold text-white">May 2025</span>
+          <button className="text-white/60 hover:text-white text-xs">&gt;</button>
         </div>
-      </section>
+        <div className="grid grid-cols-7 gap-1 text-center">
+          {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((d) => (
+            <span key={d} className="text-[9px] text-brand-200 font-semibold py-1">{d}</span>
+          ))}
+          {calendarDays.flat().map((day, i) => (
+            <span
+              key={i}
+              className={`text-xs py-1.5 rounded-md ${
+                day === "24"
+                  ? "bg-brand-500 text-white font-bold"
+                  : day
+                  ? "text-white/80 hover:bg-white/10 cursor-pointer"
+                  : ""
+              }`}
+            >
+              {day}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* ─── Why Attend ─── */}
+    <div className="relative bg-brand-50/50 rounded-3xl border border-border p-6 sm:p-8">
+       <img 
+        src="/happy-stay-jaipur-home-bottom-cta-right.png" 
+        alt="" 
+        className="absolute bottom-0 right-0 w-1/2 h-1/2 object-contain object-right-bottom opacity-50 pointer-events-none select-none z-0"
+      />
+      <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-6">
+        Why Attend Events in Jaipur?
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {whyAttend.map((item) => (
+          <div key={item.title} className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0">
+              {item.icon}
+            </div>
+            <div>
+              <h4 className="font-semibold text-text-primary text-sm">{item.title}</h4>
+              <p className="text-text-muted text-xs mt-0.5 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* ─────────── ANNUAL EVENTS ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-lg sm:text-xl font-bold text-text-primary">Annual Events You Shouldn&apos;t Miss</h3>
           <div className="flex items-center gap-2">
-            <button className="w-8 h-8 rounded-full border border-border-strong flex items-center justify-center text-text-muted hover:border-purple-300 hover:text-purple-600 transition-colors">
+            <button className="w-8 h-8 rounded-full border border-border-strong flex items-center justify-center text-text-muted hover:border-brand-200 hover:text-brand-600 transition-colors">
               <ArrowRightIcon className="w-4 h-4 rotate-180" />
             </button>
-            <button className="w-8 h-8 rounded-full border border-border-strong flex items-center justify-center text-text-muted hover:border-purple-300 hover:text-purple-600 transition-colors">
+            <button className="w-8 h-8 rounded-full border border-border-strong flex items-center justify-center text-text-muted hover:border-brand-200 hover:text-brand-600 transition-colors">
               <ArrowRightIcon className="w-4 h-4" />
             </button>
           </div>
@@ -639,15 +664,15 @@ export default function EventsPage() {
           {annualEvents.map((evt) => (
             <div
               key={evt.name}
-              className="flex-shrink-0 flex items-center gap-3 px-5 py-4 rounded-2xl bg-surface border border-border hover:border-purple-200 hover:shadow-md transition-all cursor-pointer min-w-[240px]"
+              className="flex-shrink-0 flex items-center gap-3 px-5 py-4 rounded-2xl bg-surface border border-border hover:border-brand-200 hover:shadow-md transition-all cursor-pointer min-w-[240px]"
             >
-              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600">
+              <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600">
                 {evt.icon}
               </div>
               <div className="flex-1 min-w-0">
                 <h4 className="font-semibold text-text-primary text-sm truncate">{evt.name}</h4>
               </div>
-              <span className="px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 text-[10px] font-bold border border-purple-100">
+              <span className="px-2.5 py-1 rounded-full bg-brand-50 text-brand-600 text-[10px] font-bold border border-brand-100">
                 {evt.month}
               </span>
             </div>
@@ -656,17 +681,24 @@ export default function EventsPage() {
       </section>
 
       {/* ─────────── PLAN YOUR EXPERIENCE ─────────── */}
-      <section className="bg-purple-900 py-14 sm:py-16 mb-12">
+      <section className="relative bg-brand-700 py-6 mb-12">
+         <img 
+        src="/list-a-property-page-hero-bg2.png" 
+        alt="" 
+        className="absolute bottom-0 right-0 w-full h-full object-contain object-right-bottom opacity-20 pointer-events-none select-none z-0"
+      />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-xl sm:text-2xl font-bold text-white text-center mb-10">Plan Your Event Experience</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {planSteps.map((step, i) => (
-              <div key={step.title} className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-purple-200 mb-4">
+              <div key={step.title} className="flex flex-row items-center text-center">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-100 mb-4">
                   {step.icon}
                 </div>
+                <div className="text-start pl-3">
                 <h4 className="font-semibold text-white text-sm mb-1">{step.title}</h4>
-                <p className="text-purple-200 text-xs leading-relaxed max-w-[180px]">{step.desc}</p>
+                <p className="text-brand-100 text-xs leading-relaxed max-w-[180px]">{step.desc}</p>
+              </div>
               </div>
             ))}
           </div>
@@ -674,10 +706,16 @@ export default function EventsPage() {
       </section>
 
       {/* ─────────── NEWSLETTER ─────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-surface rounded-2xl border border-border p-6 sm:p-8">
+      <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      
+        <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6 bg-brand-50/50 rounded-2xl border border-border p-6 sm:p-8">
+               <img 
+        src="/happy-stay-jaipur-home-bottom-cta-left.png" 
+        alt="" 
+        className="absolute bottom-0 right-0 w-full h-full object-contain object-right-bottom opacity-50 pointer-events-none select-none z-0"
+      />
           <div>
-            <p className="text-purple-600 text-lg italic mb-1" style={{ fontFamily: "Georgia, serif" }}>Stay Updated!</p>
+            <p className="text-brand-600 text-lg italic mb-1" style={{ fontFamily: "Georgia, serif" }}>Stay Updated!</p>
             <p className="text-text-muted text-sm">Subscribe to get the latest updates on events, offers and exciting things to do in Jaipur.</p>
           </div>
           <div className="flex w-full sm:w-auto gap-2">
@@ -686,9 +724,9 @@ export default function EventsPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 sm:w-64 px-4 py-3 rounded-xl bg-surface-muted border border-border-strong text-sm text-text-body placeholder:text-text-faint outline-none focus:border-purple-300"
+              className="flex-1 sm:w-64 px-4 py-3 rounded-xl bg-surface-muted border border-border-strong text-sm text-text-body placeholder:text-text-faint outline-none focus:border-brand-200"
             />
-            <button className="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-700 transition-colors shadow-sm flex-shrink-0">
+            <button className="px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 transition-colors shadow-sm flex-shrink-0">
               Subscribe
             </button>
           </div>

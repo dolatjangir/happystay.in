@@ -89,7 +89,7 @@ const restaurants = [
     rating: 4.4,
     reviews: "856",
     price: "₹₹",
-    image: "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 3,
@@ -280,7 +280,7 @@ function Navbar() {
 function Hero() {
   return (
     <>
-    <section className="relative w-full overflow-hidden pt-10">
+    <section className="relative w-full h-[70dvh] overflow-hidden  sm:pt-10">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -304,7 +304,7 @@ function Hero() {
 
             {/* Title */}
             <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] mb-4">
-              Best<br />
+              Best
               Restaurants<br />
               in <span className="text-brand-700">Jaipur</span>
             </h1>
@@ -315,12 +315,12 @@ function Hero() {
             </p>
 
             {/* CTA Button */}
-            <button className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600 transition-colors"
+            {/* <button className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600 transition-colors"
               style={{ boxShadow: "0 4px 20px rgba(67, 56, 202, 0.35)" }}
             >
               Explore Restaurants
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -403,16 +403,14 @@ function CategoryFilter() {
               <button
                 key={cat.label}
                 onClick={() => setActive(cat.label)}
-                className={`flex flex-col items-center gap-2 min-w-[72px] px-3 py-3 rounded-xl transition-all duration-200 ${
-                  isActive
-                    ? "bg-brand-50 text-brand-600"
-                    : "bg-surface text-text-secondary hover:bg-surface-muted hover:text-brand-600"
-                }`}
+                className={`flex flex-col items-center gap-2 min-w-[72px] px-3 py-3 rounded-xl transition-all duration-200 
+                 `}
               >
+                <div className={`flex items-center justify-center h-12 w-12 rounded-lg border ${isActive ? "bg-brand-50 border-brand-600" : "bg-surface-muted border-border-strong"}`}>
                 <cat.icon
-                  className={`h-6 w-6 ${isActive ? "text-brand-600" : "text-text-faint"}`}
+                  className={`h-6 w-6  ${isActive ? "text-brand-600 " : "text-text-faint"}`}
                   strokeWidth={1.5}
-                />
+                /></div>
                 <span className={`text-xs font-medium whitespace-nowrap ${isActive ? "text-brand-600" : ""}`}>
                   {cat.label}
                 </span>
@@ -555,30 +553,28 @@ function RooftopSection() {
           style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}
         >
           {/* Subtle palace watermark on right */}
-          <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-[0.04] pointer-events-none hidden lg:block">
-            <svg viewBox="0 0 200 300" className="h-full w-full" fill="currentColor">
-              <path d="M100 20 L120 40 L120 60 L140 60 L140 80 L160 80 L160 120 L180 120 L180 280 L20 280 L20 120 L40 120 L40 80 L60 80 L60 60 L80 60 L80 40 Z" />
-            </svg>
+          <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-[0.2] pointer-events-none hidden lg:block">
+            <img src="/happy-stay-jaipur-home-bottom-cta-left.png" alt="Watermark" className="h-full w-full" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
             {/* Image */}
-            <div className="relative h-64 sm:h-80 lg:h-auto min-h-[300px]">
+            <div className="relative h-64 sm:h-80 lg:h-auto min-h-[300px] ">
               <Image
                 src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"
                 alt="Rooftop Dining"
                 fill
-                className="object-cover"
+                className="object-cover rounded-b-2xl sm:rounded-r-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 lg:bg-gradient-to-l" />
             </div>
 
             {/* Content */}
-            <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center relative">
+            <div className="p-3 sm:p-8  flex flex-col justify-center relative">
               <p className="font-[family-name:var(--font-dancing)] text-xl text-brand-600 mb-1">
                 Dine with a View
               </p>
-              <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl lg:text-4xl font-bold text-text-primary mb-3">
+              <h2 className="font-[family-name:var(--font-playfair)] text-xl sm:text-2xl lg:text-3xl font-bold text-text-primary mb-3">
                 Rooftop Restaurants<br />You&apos;ll Love
               </h2>
               <p className="text-text-secondary text-sm sm:text-base leading-relaxed mb-6 max-w-md">
@@ -591,8 +587,10 @@ function RooftopSection() {
                 <ArrowRight className="h-4 w-4" />
               </button>
 
+            
+            </div>
               {/* Features */}
-              <div className="mt-8 space-y-4">
+              <div className="px-3 pb-3 sm:pb-0 sm:px-0 mt-3 sm:mt-18 space-y-8">
                 {rooftopFeatures.map((f) => (
                   <div key={f.title} className="flex items-start gap-3">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
@@ -607,7 +605,6 @@ function RooftopSection() {
                   </div>
                 ))}
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -617,19 +614,16 @@ function RooftopSection() {
 
 function StatsBanner() {
   return (
-    <section className="py-12 lg:py-16 relative overflow-hidden"
+    <section className="py-6 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-brand-700)" }}
     >
       {/* Subtle palace watermark */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-[0.06] pointer-events-none hidden md:block">
-        <svg viewBox="0 0 400 200" className="h-full w-full" fill="white">
-          <path d="M50 180 L50 120 L70 120 L70 100 L90 100 L90 80 L110 80 L110 60 L130 60 L130 40 L150 20 L170 40 L170 60 L190 60 L190 80 L210 80 L210 100 L230 100 L230 120 L250 120 L250 180 Z" />
-          <path d="M280 180 L280 130 L295 130 L295 115 L310 115 L310 100 L325 100 L325 85 L340 85 L340 70 L355 55 L370 70 L370 85 L385 85 L385 100 L400 100 L400 180 Z" />
-        </svg>
+      <div className="absolute right-0 top-0 bottom-0  h-full  opacity-[0.6] pointer-events-none hidden md:block">
+        <img src="/restaurent-cta-img.png" alt="Watermark" className="h-full w-full" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
           {/* Left CTA */}
           <div className="text-center lg:text-left">
             <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -646,16 +640,18 @@ function StatsBanner() {
           </div>
 
           {/* Stats */}
-          <div className="flex items-center gap-8 sm:gap-12">
+          <div className="flex  items-center gap-10 sm:gap-12">
             {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/30 text-white mb-2">
-                  <stat.icon className="h-5 w-5" strokeWidth={1.5} />
+              <div key={stat.label} className="flex flex-col sm:flex-row items-center text-center">
+                <div className="flex w-12 h-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-white/30 text-white mb-2">
+                  <stat.icon className="w-5 h-5 sm:h-8 sm:w-8 " strokeWidth={1.5} />
                 </div>
+                <div className="flex flex-col items-center pl-2">
                 <span className="text-xl sm:text-2xl font-bold text-white">
                   {stat.value}
                 </span>
                 <span className="text-xs text-white/70">{stat.label}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -670,7 +666,7 @@ function StatsBanner() {
 export default function RestaurantsPage() {
   return (
     <main
-      className={`${playfair.variable} ${inter.variable} ${dancing.variable} min-h-screen bg-bg font-[family-name:var(--font-inter)]`}
+      className={`${playfair.variable} ${inter.variable} ${dancing.variable} min-h-screen bg-brand-50/50 font-[family-name:var(--font-inter)]`}
     >
       {/* <Navbar /> */}
       <Hero />

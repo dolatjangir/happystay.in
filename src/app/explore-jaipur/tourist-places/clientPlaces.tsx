@@ -343,12 +343,12 @@ function SectionLabel({ text }: { text: string }) {
 function FeaturedPlaces() {
   return (
     <section className="py-12 lg:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <SectionLabel text="Featured" />
         <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl lg:text-5xl font-bold text-(--color-badge-luxury) text-center mb-3">
           Top Tourist Places in Jaipur
         </h2>
-        <p className="text-center text-(--color-badge-new) text-base sm:text-lg max-w-2xl mx-auto mb-10">
+        <p className="text-center text-(--color-badge-new) text-base sm:text-lg max-w-2xl mx-auto mb-5 sm:mb-10">
           Explore the timeless beauty of Jaipur with our handpicked destinations
         </p>
 
@@ -453,7 +453,7 @@ function TopExperiences() {
 function WhyVisit() {
   return (
    <section className="py-12 lg:py-16">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div className="rounded-3xl bg-brand-200 border border-border overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
       <div className="grid grid-cols-1 lg:grid-cols-5">
         {/* Image — 1/4 width on desktop, full-width stacked on mobile */}
@@ -473,7 +473,7 @@ function WhyVisit() {
         </div>
 
         {/* Content — 3/4 width on desktop */}
-        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center lg:col-span-3">
+        <div className="p-4 sm:p-10 lg:p-12 flex flex-col justify-center lg:col-span-3">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-brand-700 mb-8 text-center lg:text-left">
             Why Visit Jaipur?
           </h2>

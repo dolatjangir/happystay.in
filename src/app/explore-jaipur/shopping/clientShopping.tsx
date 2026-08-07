@@ -217,7 +217,7 @@ const markets = [
     location: "Pink City",
     badge: "Top Pick",
     badgeColor: "bg-brand-600",
-    image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=600&h=400&fit=crop",
+    image: "/johari_bazar.png",
   },
   {
     name: "Bapu Bazaar",
@@ -227,7 +227,7 @@ const markets = [
     location: "Pink City",
     badge: "Popular",
     badgeColor: "bg-brand-500",
-    image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&h=400&fit=crop",
+    image: "/bapu_bazar.png",
   },
   {
     name: "Tripolia Bazaar",
@@ -237,7 +237,7 @@ const markets = [
     location: "Pink City",
     badge: "Popular",
     badgeColor: "bg-brand-500",
-    image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&h=400&fit=crop",
+    image: "/tripolia-bazar.png",
   },
   {
     name: "C-Scheme",
@@ -247,7 +247,7 @@ const markets = [
     location: "C-Scheme",
     badge: null,
     badgeColor: "",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
+    image: "/c-scheme-bazar.png",
   },
 ];
 
@@ -271,7 +271,7 @@ const experiences = [
   {
     title: "Vintage & Offbeat Finds",
     desc: "Discover hidden gems in small lanes",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=250&fit=crop",
+    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=250&fit=crop",
   },
   {
     title: "Boutique Shopping",
@@ -308,18 +308,18 @@ export default function ShoppingPage() {
      
 
       {/* ─────────── HERO SECTION ─────────── */}
-      <section className="relative">
+      <section className="relative h-[70dvh]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=1600&h=800&fit=crop"
+            src="/shopping-hero-img.png"
             alt="Jaipur Markets"
             fill
             className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" /> */}
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32">
@@ -353,8 +353,10 @@ export default function ShoppingPage() {
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 -mt-16 mb-12">
+       
+      </section>
+       {/* Search Bar */}
+        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 -mt-14 mb-10">
           <div className="bg-surface rounded-2xl shadow-lg border border-border p-4 sm:p-5">
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Search Input */}
@@ -421,10 +423,9 @@ export default function ShoppingPage() {
             </div>
           </div>
         </div>
-      </section>
 
       {/* ─────────── SHOP BY CATEGORY ─────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="h-px w-12 bg-border-strong" />
           <h2 className="text-2xl sm:text-3xl font-bold text-brand-600 text-center">Shop by Category</h2>
@@ -513,68 +514,95 @@ export default function ShoppingPage() {
       {/* ─────────── WHAT TO SHOP IN JAIPUR ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="bg-surface rounded-3xl border border-border overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
             {/* Left Image */}
-            <div className="relative h-64 lg:h-auto min-h-[400px]">
+            <div className="relative h-64  lg:h-auto min-h-[200px] col-span-1">
               <Image
-                src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=800&h=600&fit=crop"
+                src="/shopping-cta-img.png"
                 alt="Jaipur Shopping"
                 fill
-                className="object-cover"
+                className="object-cover rounded-r-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/20 lg:to-surface/80" />
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/20 lg:to-surface/80" /> */}
             </div>
 
-            {/* Right Content */}
-            <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-brand-600 mb-1">What to Shop in Jaipur?</h2>
-              <p className="text-text-muted mb-8">Take home a piece of Pink City&apos;s culture</p>
+           {/* Right Content */}
+<div className="relative p-6 sm:p-8 flex flex-col justify-center col-span-2 overflow-hidden">
+  
+  {/* Background Image - Bottom Right */}
+  <img 
+    src="/restaurent-cta-img.png" 
+    alt="Restaurant CTA"
+    className="absolute bottom-0 right-0 w-1/2 h-3/4 object-contain object-right-bottom pointer-events-none select-none z-0"
+  />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-                {shopItems.map((item) => (
-                  <div key={item.title} className="flex items-start gap-3 group">
-                    <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-100 transition-colors">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-text-primary text-sm">{item.title}</h4>
-                      <p className="text-text-muted text-xs mt-0.5">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+  {/* Content - sits above the image */}
+  <div className="relative z-10">
+    <h2 className="text-2xl sm:text-3xl font-bold text-brand-600 mb-1">
+      What to Shop in Jaipur?
+    </h2>
+    <p className="text-text-muted mb-8">
+      Take home a piece of Pink City&apos;s culture
+    </p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6">
+      {shopItems.map((item) => (
+        <div key={item.title} className="flex items-start gap-3 group">
+          <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-100 transition-colors">
+            {item.icon}
+          </div>
+          <div>
+            <h4 className="font-semibold text-text-primary text-sm">{item.title}</h4>
+            <p className="text-text-muted text-xs mt-0.5">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </section>
 
       {/* ─────────── UNIQUE SHOPPING EXPERIENCES ─────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-brand-600 text-center mb-2">Unique Shopping Experiences</h2>
-        <p className="text-text-muted text-center mb-8">Make your Jaipur trip more memorable</p>
+     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+  <h2 className="text-2xl sm:text-3xl font-bold text-brand-600 text-center mb-2">
+    Unique Shopping Experiences
+  </h2>
+  <p className="text-text-muted text-center mb-8">
+    Make your Jaipur trip more memorable
+  </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {experiences.map((exp) => (
-            <div
-              key={exp.title}
-              className="group bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all cursor-pointer"
-            >
-              <div className="relative h-40 overflow-hidden">
-                <Image
-                  src={exp.image}
-                  alt={exp.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-text-primary text-base mb-1">{exp.title}</h3>
-                <p className="text-text-muted text-sm">{exp.desc}</p>
-              </div>
-            </div>
-          ))}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {experiences.map((exp) => (
+      <div
+        key={exp.title}
+        className="group flex flex-row bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all cursor-pointer h-full"
+      >
+        {/* Image - Left Side */}
+        <div className="relative w-2/5 min-h-[140px] overflow-hidden flex-shrink-0">
+          <Image
+            src={exp.image}
+            alt={exp.title}
+            fill
+            sizes="(max-width: 640px) 40vw, (max-width: 1024px) 30vw, 20vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         </div>
-      </section>
+
+        {/* Content - Right Side */}
+        <div className="flex-1 p-4 flex flex-col justify-center">
+          <h3 className="font-bold text-text-primary text-sm sm:text-base mb-1 line-clamp-1">
+            {exp.title}
+          </h3>
+          <p className="text-text-muted text-xs sm:text-sm leading-relaxed line-clamp-3">
+            {exp.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* ─────────── SHOPPING TIPS ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
@@ -608,15 +636,15 @@ export default function ShoppingPage() {
       {/* ─────────── CTA BANNER ─────────── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-brand-700 via-brand-600 to-brand-500" />
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-40">
           <Image
-            src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=1600&h=400&fit=crop"
+            src="/shopping-cta-img.png"
             alt=""
             fill
             className="object-cover"
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
               Plan Your Jaipur Shopping Trip
@@ -633,21 +661,6 @@ export default function ShoppingPage() {
         </div>
       </section>
 
-    
-      <footer className="bg-text-primary text-white/60 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2.5">
-              <LogoIcon />
-              <div className="flex flex-col leading-none">
-                <span className="text-lg font-bold text-white tracking-tight">HappyStay</span>
-                <span className="text-[10px] font-semibold text-brand-200 tracking-[0.2em] uppercase">Jaipur</span>
-              </div>
-            </div>
-            <p className="text-sm">© 2026 HappyStay Jaipur. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
