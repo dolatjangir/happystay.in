@@ -230,8 +230,8 @@ const topGuides = [
     author: "Lokesh Sharma",
     role: "Local Expert",
     badge: "Popular",
-    badgeColor: "bg-purple-600",
-    image: "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=600&h=350&fit=crop",
+    badgeColor: "bg-brand-600",
+    image: "/happy-stay-jaipur-hero-img.png",
   },
   {
     title: "Hidden Gems of Jaipur",
@@ -240,8 +240,8 @@ const topGuides = [
     author: "Priya Rathore",
     role: "Heritage Enthusiast",
     badge: "Hidden Gems",
-    badgeColor: "bg-purple-600",
-    image: "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=600&h=350&fit=crop",
+    badgeColor: "bg-brand-600",
+    image: "/hidden-place-jaipur.jpg",
   },
   {
     title: "What & Where to Eat",
@@ -250,8 +250,8 @@ const topGuides = [
     author: "Arvind Singh",
     role: "Food Blogger",
     badge: "Local's Choice",
-    badgeColor: "bg-purple-600",
-    image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=350&fit=crop",
+    badgeColor: "bg-brand-600",
+    image: "/where-eat-jaipur.jfif",
   },
   {
     title: "Getting Around Jaipur",
@@ -260,8 +260,8 @@ const topGuides = [
     author: "Neha Verma",
     role: "Travel Planner",
     badge: "Travel Smart",
-    badgeColor: "bg-purple-600",
-    image: "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=600&h=350&fit=crop",
+    badgeColor: "bg-brand-600",
+    image: "/transportation-jaipur.jpeg",
   },
 ];
 
@@ -274,11 +274,11 @@ const insiderTips = [
 ];
 
 const areas = [
-  { name: "Old City", tagline: "The Heart of Jaipur", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&h=250&fit=crop" },
-  { name: "C-Scheme", tagline: "Modern & Happening", image: "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=400&h=250&fit=crop" },
-  { name: "Jaipur North", tagline: "Peaceful & Green", image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=400&h=250&fit=crop" },
-  { name: "Vaishali Nagar", tagline: "Trendy & Convenient", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop" },
-  { name: "Malviya Nagar", tagline: "Local & Lively", image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=400&h=250&fit=crop" },
+  { name: "Old City", tagline: "The Heart of Jaipur", image: "/old-city-jaipur.jpg" },
+  { name: "C-Scheme", tagline: "Modern & Happening", image: "/c-scheme-jaipur.webp" },
+  { name: "Jaipur North", tagline: "Peaceful & Green", image: "/north-side-image.jfif" },
+  { name: "Vaishali Nagar", tagline: "Trendy & Convenient", image: "/vaisali-nagar-jaipur.jfif" },
+  { name: "Malviya Nagar", tagline: "Local & Lively", image: "/malviya-nagar-jaipur.avif" },
 ];
 
 const heroFeatures = [
@@ -302,28 +302,28 @@ export default function LocalGuidePage() {
 
 
       {/* ─────────── HERO ─────────── */}
-      <section className="relative">
+      <section className="relative h-[80dvh]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1600&h=900&fit=crop"
+            src="/local-guide-hero-img.png"
             alt="Jaipur Local Guide"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-white/10" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" /> */}
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-36">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-36">
           <div className="max-w-lg">
-            <p className="text-purple-700 text-lg sm:text-xl font-medium italic mb-2" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="text-brand-700 text-lg sm:text-xl font-medium italic mb-2" style={{ fontFamily: "Georgia, serif" }}>
               Explore Jaipur Like a Local
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.05] mb-4" style={{ fontFamily: "Georgia, serif" }}>
               Local Guide
               <br />
-              <span className="text-purple-700">Jaipur</span>
+              <span className="text-brand-700">Jaipur</span>
             </h1>
             <p className="text-text-secondary text-base sm:text-lg mb-8 max-w-md">
               Insider tips, local stories, hidden gems and everything you need to experience the real Pink City.
@@ -332,7 +332,7 @@ export default function LocalGuidePage() {
             <div className="flex flex-wrap gap-3 mb-8">
               {heroFeatures.map((f, i) => (
                 <div key={i} className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/80 backdrop-blur-sm border border-border-strong shadow-sm text-sm text-text-secondary">
-                  <span className="text-purple-700">{f.icon}</span>
+                  <span className="text-brand-700">{f.icon}</span>
                   <span className="text-xs sm:text-sm font-medium">{f.label}</span>
                 </div>
               ))}
@@ -340,8 +340,11 @@ export default function LocalGuidePage() {
           </div>
         </div>
 
+      
+      </section>
+
         {/* Search Bar */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 -mt-20 mb-12">
+        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 -mt-12 mb-12">
           <div className="bg-surface rounded-2xl shadow-lg border border-border p-4 sm:p-5">
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1 flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-muted border border-border-strong">
@@ -392,22 +395,21 @@ export default function LocalGuidePage() {
                 <ChevronDownIcon className="w-4 h-4 text-text-faint flex-shrink-0" />
               </div>
 
-              <button className="px-6 py-3 rounded-xl bg-purple-700 text-white font-semibold text-sm hover:bg-purple-800 transition-colors shadow-sm flex items-center justify-center gap-2 flex-shrink-0">
+              <button className="px-6 py-3 rounded-xl bg-brand-700 text-white font-semibold text-sm hover:bg-brand-700 transition-colors shadow-sm flex items-center justify-center gap-2 flex-shrink-0">
                 Explore Now
                 <ArrowRightIcon className="w-4 h-4" />
               </button>
             </div>
           </div>
         </div>
-      </section>
 
       {/* ─────────── KNOW JAIPUR BETTER ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-2">
-            <div className="h-px w-12 bg-purple-300" />
-            <h2 className="text-xl sm:text-2xl font-bold text-text-primary">Know Jaipur Better</h2>
-            <div className="h-px w-12 bg-purple-300" />
+            <div className="h-px w-12 bg-brand-700" />
+            <h2 className="text-xl sm:text-2xl font-bold text-brand-700">Know Jaipur Better</h2>
+            <div className="h-px w-12 bg-brand-700" />
           </div>
           <p className="text-text-muted text-sm">Everything you should know before you explore</p>
         </div>
@@ -418,11 +420,11 @@ export default function LocalGuidePage() {
               key={cat.name}
               className={`group flex flex-col items-center gap-2 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl border transition-all min-w-[90px] sm:min-w-[110px] ${
                 cat.active
-                  ? "border-purple-700 bg-purple-700 text-white shadow-md"
-                  : "border-border-strong bg-surface text-text-secondary hover:border-purple-300 hover:text-purple-700"
+                  ? "border-brand-700 bg-brand-700 text-white shadow-md"
+                  : "border-border-strong bg-surface text-text-secondary hover:border-brand-300 hover:text-brand-700"
               }`}
             >
-              <span className={cat.active ? "text-white" : "text-text-muted group-hover:text-purple-700"}>
+              <span className={cat.active ? "text-white" : "text-text-muted group-hover:text-brand-700"}>
                 {cat.icon}
               </span>
               <span className="text-[10px] sm:text-xs font-medium text-center leading-tight">{cat.name}</span>
@@ -435,10 +437,10 @@ export default function LocalGuidePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="flex items-end justify-between mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-1">Top Local Guides</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-brand-700 mb-1">Top Local Guides</h2>
             <p className="text-text-muted text-sm">Handpicked guides to make your Jaipur trip smooth and memorable.</p>
           </div>
-          <button className="hidden sm:inline-flex items-center gap-1 text-sm text-purple-700 hover:text-purple-800 transition-colors font-medium">
+          <button className="hidden sm:inline-flex items-center gap-1 text-sm text-brand-700 hover:text-brand-700 transition-colors font-medium">
             View All Guides <ArrowRightIcon className="w-4 h-4" />
           </button>
         </div>
@@ -447,7 +449,7 @@ export default function LocalGuidePage() {
           {topGuides.map((guide) => (
             <div
               key={guide.title}
-              className="group bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-purple-200 transition-all cursor-pointer"
+              className="group bg-brand-50/50 rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all cursor-pointer"
             >
               <div className="relative h-40 overflow-hidden">
                 <Image
@@ -456,7 +458,7 @@ export default function LocalGuidePage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-700 text-white text-[10px] font-bold uppercase tracking-wider">
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider">
                   {guide.badge}
                 </div>
               </div>
@@ -465,7 +467,7 @@ export default function LocalGuidePage() {
                 <p className="text-text-muted text-xs mb-2">{guide.subtitle}</p>
                 <p className="text-text-muted text-xs leading-relaxed mb-4 line-clamp-2">{guide.desc}</p>
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 text-xs font-bold">
+                  <div className="w-7 h-7 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xs font-bold">
                     {guide.author.charAt(0)}
                   </div>
                   <div>
@@ -480,8 +482,14 @@ export default function LocalGuidePage() {
       </section>
 
       {/* ─────────── INSIDER TIPS ─────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-surface rounded-3xl border border-border p-6 sm:p-10 relative overflow-hidden">
+      <section className="  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+       
+        <div className="relative bg-brand-50/30 rounded-3xl border border-border p-6 sm:p-10 relative overflow-hidden">
+           <img 
+        src="/list-a-property-page-hero-bg2.png" 
+        alt="" 
+        className="absolute bottom-0 left-0 w-full h-full object-contain object-right-bottom opacity-10 pointer-events-none select-none z-0"
+      />
           <div className="relative z-10">
             <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-1 text-center">Insider Tips from Locals</h3>
             <p className="text-text-muted text-sm text-center mb-8">Little things that make a big difference</p>
@@ -489,7 +497,7 @@ export default function LocalGuidePage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
               {insiderTips.map((tip) => (
                 <div key={tip.title} className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-700 mb-3">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-700 mb-3">
                     {tip.icon}
                   </div>
                   <h4 className="font-semibold text-text-primary text-sm mb-1">{tip.title}</h4>
@@ -502,13 +510,13 @@ export default function LocalGuidePage() {
       </section>
 
       {/* ─────────── EXPLORE BY AREA ─────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="flex items-end justify-between mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-1">Explore by Area</h2>
-            <p className="text-text-muted text-sm">Local guides for every corner of Jaipur</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-brand-700 mb-1">Explore by Area</h2>
+            <p className="text-brand-400 text-sm">Local guides for every corner of Jaipur</p>
           </div>
-          <button className="hidden sm:inline-flex items-center gap-1 text-sm text-purple-700 hover:text-purple-800 transition-colors font-medium">
+          <button className="hidden sm:inline-flex items-center gap-1 text-sm text-brand-700 hover:text-brand-700 transition-colors font-medium">
             View All Areas <ArrowRightIcon className="w-4 h-4" />
           </button>
         </div>
@@ -529,17 +537,17 @@ export default function LocalGuidePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <h4 className="font-bold text-text-primary text-sm">{a.name}</h4>
-                <p className="text-text-muted text-xs">{a.tagline}</p>
+                <h4 className="font-bold text-brand-700 text-sm">{a.name}</h4>
+                <p className="text-brand-200 text-xs">{a.tagline}</p>
               </div>
             ))}
           </div>
 
           {/* Scroll arrows */}
-          <button className="hidden lg:flex absolute -left-4 top-16 -translate-y-1/2 w-10 h-10 rounded-full bg-surface border border-border shadow-lg items-center justify-center text-text-muted hover:text-purple-700 hover:border-purple-300 transition-colors z-10">
+          <button className="hidden lg:flex absolute -left-4 top-16 -translate-y-1/2 w-10 h-10 rounded-full bg-surface border border-border shadow-lg items-center justify-center text-text-muted hover:text-brand-700 hover:border-brand-200 transition-colors z-10">
             <ArrowRightIcon className="w-5 h-5 rotate-180" />
           </button>
-          <button className="hidden lg:flex absolute -right-4 top-16 -translate-y-1/2 w-10 h-10 rounded-full bg-surface border border-border shadow-lg items-center justify-center text-text-muted hover:text-purple-700 hover:border-purple-300 transition-colors z-10">
+          <button className="hidden lg:flex absolute -right-4 top-16 -translate-y-1/2 w-10 h-10 rounded-full bg-surface border border-border shadow-lg items-center justify-center text-text-muted hover:text-brand-700 hover:border-brand-200 transition-colors z-10">
             <ArrowRightIcon className="w-5 h-5" />
           </button>
         </div>
@@ -548,10 +556,10 @@ export default function LocalGuidePage() {
       {/* ─────────── CTA BANNER ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="relative overflow-hidden rounded-3xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-700" />
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-600 via-brand-700 to-brand-700" />
+          <div className="absolute inset-0 opacity-40">
             <Image
-              src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1600&h=500&fit=crop"
+              src="/happy-stay-jaipur-hero-img.png"
               alt=""
               fill
               className="object-cover"
@@ -561,30 +569,30 @@ export default function LocalGuidePage() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Need Help Planning Your Jaipur Trip?</h3>
-                <p className="text-purple-200 text-sm max-w-md">Our local experts are here to help you plan a perfect & personalized experience.</p>
+                <p className="text-brand-200 text-sm max-w-md">Our local experts are here to help you plan a perfect & personalized experience.</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-6 sm:gap-8">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-purple-200">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-200">
                     <ItineraryIcon />
                   </div>
-                  <p className="text-xs text-purple-200 text-center leading-tight">Personalized<br />Itineraries</p>
+                  <p className="text-xs text-brand-200 text-center leading-tight">Personalized<br />Itineraries</p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-purple-200">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-200">
                     <SupportIcon />
                   </div>
-                  <p className="text-xs text-purple-200 text-center leading-tight">Local Expert<br />Support</p>
+                  <p className="text-xs text-brand-200 text-center leading-tight">Local Expert<br />Support</p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-purple-200">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-200">
                     <SuggestionsIcon />
                   </div>
-                  <p className="text-xs text-purple-200 text-center leading-tight">Best Suggestions<br />Guaranteed</p>
+                  <p className="text-xs text-brand-200 text-center leading-tight">Best Suggestions<br />Guaranteed</p>
                 </div>
 
-                <button className="px-6 py-3 rounded-xl bg-white text-purple-900 font-semibold text-sm hover:bg-purple-50 transition-colors shadow-lg flex items-center gap-2">
+                <button className="px-6 py-3 rounded-xl bg-white text-brand-900 font-semibold text-sm hover:bg-brand-50 transition-colors shadow-lg flex items-center gap-2">
                   Contact Local Expert
                   <ArrowRightIcon className="w-4 h-4" />
                 </button>
@@ -596,10 +604,10 @@ export default function LocalGuidePage() {
 
       {/* ─────────── STATS BAR ─────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-surface rounded-2xl border border-border p-6 sm:p-8">
-          <div className="flex flex-wrap items-center gap-8 sm:gap-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-surface rounded-2xl border border-border p-2 sm:p-4">
+          <div className="flex flex-wrap items-center gap-8 sm:gap-10   bg-brand-50/30 rounded-xl border border-brand-100 p-4 sm:p-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-700">
+              <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-700">
                 <UsersIcon className="w-5 h-5" />
               </div>
               <div>
@@ -608,7 +616,7 @@ export default function LocalGuidePage() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-700">
+              <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-700">
                 <ItineraryIcon />
               </div>
               <div>
@@ -617,7 +625,7 @@ export default function LocalGuidePage() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-700">
+              <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-700">
                 <UsersIcon className="w-5 h-5" />
               </div>
               <div>
@@ -626,7 +634,7 @@ export default function LocalGuidePage() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-700">
+              <div className="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-700">
                 <StarIcon className="w-5 h-5 text-yellow-400" />
               </div>
               <div>
@@ -636,12 +644,12 @@ export default function LocalGuidePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 bg-brand-50/30 rounded-xl border border-brand-100 p-4 sm:p-5">
             <div className="text-right">
               <p className="text-sm font-semibold text-text-primary">Still Have Questions?</p>
               <p className="text-xs text-text-muted">We're here to help you.</p>
             </div>
-            <button className="px-5 py-2.5 rounded-xl bg-purple-700 text-white font-semibold text-sm hover:bg-purple-800 transition-colors shadow-sm flex items-center gap-2">
+            <button className="px-5 py-2.5 rounded-xl bg-brand-700 text-white font-semibold text-sm hover:bg-brand-700 transition-colors shadow-sm flex items-center gap-2">
               Ask a Local
             </button>
           </div>

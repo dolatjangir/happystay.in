@@ -276,7 +276,7 @@ export default function SignUpPage() {
           <p className="text-sm mt-2" style={{ color: "var(--color-text-muted)" }}>
             Already have an account?{" "}
             <Link
-              href="/login"
+              href="/signin"
               className="font-semibold transition hover:opacity-80"
               style={{ color: "var(--color-brand-600)" }}
             >
